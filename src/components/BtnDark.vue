@@ -1,5 +1,5 @@
 <template>
-    <h1>TheNav</h1>
+    <h1>BtnDark</h1>
     <!-- Indsæt HTML herunder -->
      
 </template>
