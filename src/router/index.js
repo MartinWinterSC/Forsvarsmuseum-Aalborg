@@ -3,22 +3,20 @@ import LandingView from '@/views/LandingView.vue'
 import TheFooter from '@/components/TheFooter.vue'
 import TheNav from '@/components/TheNav.vue'
 import ScrollToTop from '@/components/ScrollToTop.vue'
-import BtnDark from '@/components/BtnDark.vue'
-import BtnLight from '@/components/BtnLight.vue'
+import CTABtn from '@/components/CTABtn.vue'
 import ActivityCards from '@/components/ActivityCards.vue'
 import ExhibitCard from '@/components/ExhibitCard.vue'
 import FEPCards from '@/components/FEPCards.vue'
 import HeroImg from '@/components/HeroImg.vue'
 import ImgWText from '@/components/ImgWText.vue'
 import InstagramCards from '@/components/InstagramCards.vue'
-import ScrollIndicator from '@/components/ScrollIndicator.vue'
 import StickyBottomMenu from '@/components/StickyBottomMenu.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
+      path: '/landing',
       name: 'landing',
       component: LandingView,
     },
@@ -38,19 +36,14 @@ const router = createRouter({
       component: ScrollToTop,
     },
     {
-      path: '/btnLight',
-      name: 'BtnLight',
-      component: BtnLight,
+      path: '/CTABtn',
+      name: 'CTABtn',
+      component: CTABtn,
     },
     {
       path: '/activityCards',
       name: 'ActivityCards',
       component: ActivityCards,
-    },
-    {
-      path: '/btnDark',
-      name: 'BtnDark',
-      component: BtnDark,
     },
     {
       path: '/exhibitCard',
@@ -76,11 +69,6 @@ const router = createRouter({
       path: '/instagramCards',
       name: 'InstagramCards',
       component: InstagramCards,
-    },
-    {
-      path: '/scrollIndicator',
-      name: 'ScrollIndicator',
-      component: ScrollIndicator,
     },
     {
       path: '/stickyBottomMenu',
