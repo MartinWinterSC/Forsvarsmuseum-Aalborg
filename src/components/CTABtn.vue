@@ -1,10 +1,11 @@
 <script>
-
+    export default {};
 </script>
 
-
 <template>
-    <p>SE ALLE UDSTILLINGER</p> <!-- where the only information is needed in the button, but only will be specified when put into a view -->
+    <p>
+        <slot>Default Button Text</slot>
+    </p> 
 </template>
 
 <style scoped>
@@ -16,5 +17,10 @@
         color: var(--specialCaseColor);
         border: 2px solid var(--specialCaseColor);
         font-weight: var(--boldWeight);
+        align-self: center;
+    }
+    p:hover{
+        color: var(--headerColor);
+        background-color: var(--specialCaseColor);
     }
 </style>

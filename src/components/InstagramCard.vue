@@ -1,14 +1,22 @@
+<script>
+    export default {
+        props: {
+            imageSrc: { type: String, required: true },
+            imageAlt: { type: String, required: true },
+        },
+};
+</script>
+
 <template>
-    <!-- <h1>InstagramCards</h1> -->
-    <!-- Indsæt HTML herunder -->
-    
     <article>
         <div class="instaInfo">
             <img src="@/assets/img/FGMALogo.png" alt="">
             <p>Aalborg Forsvars og Garnissons...</p>
         </div>
-        <img src="@/assets/img/FGMALogo.png" alt="">
-        <p>Kommende jægerpilot #Familiehygge #TætPåHistorien #Forsvarsmuseet</p>
+        <img :src="imageSrc" :alt="imageAlt" />
+        <p>
+            <slot name="InstaContent"></slot>
+        </p>
     </article>
 </template>
 
@@ -16,9 +24,10 @@
     article{
         min-width: 400px;
         width: 400px;
-        /* background-color: var(--headerColor); */
-        background-color: green; /* fjernes senere, erstattes af ovnstående linje*/
+        background-color: var(--headerColor);
         border-radius: 30px;
+        scroll-snap-align: center;
+        margin: 0 25px 25px 25px;
     }
     p{
         font-size: 1rem;
@@ -51,12 +60,7 @@
     }
 
     article {
-        min-width: 400px;
-        width: 400px;
-        background-color: green;
-        border-radius: 30px;
-        scroll-snap-align: center; /* Apply sideScrollCard rules */
-        margin: 0 25px 25px 25px;
+        
     }
     article:first-child {
         margin-left: 5vw;
@@ -64,7 +68,6 @@
     article:last-child {
         margin-right: 5vw;
     }
-
 
     @media screen and (max-width: 950px){
         article{

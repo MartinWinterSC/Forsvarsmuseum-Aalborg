@@ -1,21 +1,28 @@
 <script>
-    import CTABtn from '@/components/CTABtn.vue';
+import CTABtn from './CTABtn.vue';
+
+export default {
+    components: {
+        CTABtn,
+    },
+    props: {
+        imageSrc: { type: String, required: true },
+        imageAlt: { type: String, required: true },
+    },
+};
 </script>
 
-<template>     
+<<template>
     <section>
-        <img src="../assets/img/FGMALogo.png" alt="">
+        <img :src="imageSrc" :alt="imageAlt" />
         <div class="textContainer">
-            <h3>Lorem ipsum dolor sit amet.</h3>
-            <p>
-                Hos Aalborg Forsvars- og Garnisonsmuseum får du en unik mulighed for at udforske Danmarks forsvars- og besættelseshistorie gennem autentiske udstillinger og genstande.
-                <br>
-                Vi tilbyder en unik mulighed for komme tæt på historien gennem spændende fortællinger og sjældne genstande.
-                <br>
-                Tag familien, vennerne eller kollegerne med og få en oplevelse sammen. Vi glæder os til at byde dig velkommen og dele historien med dig!
-            </p>
-            <button>PLANLÆG DIT BESØG</button>
-            <!-- Den er der styr på, detter er for demo -->
+            <h3>
+                <slot name="introHeading"></slot>
+            </h3>
+                <slot name="introContent"></slot>
+            <CTABtn>
+                <slot name="CTAText"></slot>
+            </CTABtn>
         </div>
     </section>
 </template>

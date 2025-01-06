@@ -1,11 +1,16 @@
+<script>
+export default {
+    props: {
+        imageSrc: { type: String, required: true },
+    },
+};
+</script>
+
 <template>
-    <!-- <h1>ActivityCards</h1> -->
-    <!-- Indsæt HTML herunder -->
-     
-    <article class="activityCardIndividual">
-        <p id="activityType">Familieaktivitet</p>
-        <p class="bold">DEN DØMTE ESKADRILLE</p>
-        <p>Anden verdenskrig</p>
+    <article class="activityCardIndividual" :style="{ backgroundImage: `url(${imageSrc})` }">
+        <p id="activityType"><slot name="activityCatagory"></slot></p>
+        <p class="bold"><slot name="activityName"></slot></p>
+        <p><slot name="activityAvailability"></slot></p>
     </article>
 </template>
 
@@ -14,7 +19,6 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        background-image: url(../assets/img/FGMALogo.png);
         background-repeat: no-repeat;
         background-size: cover;
         border-radius: 30px;
@@ -25,7 +29,7 @@
     }
 
     p{
-        /* color: var(--headerColor); */
+        color: var(--headerColor);
         padding: 20px;
     }
     p.bold{

@@ -1,9 +1,22 @@
+<script>
+export default {
+    components: {
+        CTABtn,
+    },
+    props: {
+        imageSrc: { type: String, required: true },
+    },
+};
+</script>
+
 <template>
-    <!-- <h1>FEPCards</h1> -->
-    <!-- Indsæt HTML herunder -->
-    <section>
-        <h3>OM MUSEET</h3>
-        <button>BESTIL BILLETTER</button> <!-- Erstattes med komponentet -->
+    <section :style="{ backgroundImage: `url(${imageSrc})` }">
+        <h3>
+            <slot name="FEPHeading"></slot>
+        </h3>
+        <CTABtn>
+            <slot name="CTAText"></slot>
+        </CTABtn>
     </section>
 </template>
 

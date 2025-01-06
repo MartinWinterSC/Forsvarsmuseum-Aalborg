@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <!-- <header>
+  <header>
     <nav class="tempNav">
       <RouterLink to="/TheFooter">TheFooter</RouterLink>
       <RouterLink to="/TheNav">TheNav</RouterLink>
@@ -19,11 +19,11 @@
       <RouterLink to="/InstagramCard">InstagramCard</RouterLink>
       <RouterLink to="/StickyBottomMenu">StickyBottomMenu</RouterLink>
     </nav>
-  </header> -->
+  </header>
 
   <TheNav />
   <RouterView />
-  <!-- <TheFooter /> -->
+  <TheFooter />
 </template>
 
 <style scoped>
