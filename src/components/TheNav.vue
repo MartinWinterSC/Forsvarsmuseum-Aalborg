@@ -40,8 +40,10 @@
     }
     .navPointsPrimary *:not(img){
         margin: 0;
-        /* margin-right: 25px; */
-        padding: 15px 7.5px 15px 7.5px;
+        padding: 10px 20px;
+    }
+    .navPointsPrimary > *{
+        padding: 5vw;
     }
     .languageSelect{
         display: flex;
@@ -68,16 +70,15 @@
         margin: 0;
     }
     .navPointsPrimary img{
-        margin-left: 5vw;
         height: 100px;
-        margin-right: 0;
+        margin: 0;
     }
     nav{
         justify-content: space-between;
         z-index: 5;
         position: absolute;
         width: 100%;
-        margin-top: 15px;
+        background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)); 
     }
     .navPointsSecondary{
         display: flex;
@@ -130,7 +131,7 @@
             margin-left: 15px;
         }
     }
-    @media screen and (max-width: 950px){
+    @media screen and (max-width: 1000px){
         .desktopNavPoints{
             display: none;
         }

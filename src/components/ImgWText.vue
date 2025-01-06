@@ -36,6 +36,7 @@ img {
     object-fit: cover;
     width: 60%;
     margin-left: 5vw;
+    border-radius: 30px;
 }
 
 .textContainer {
@@ -51,10 +52,10 @@ img {
     border-radius: 30px;
     margin-right: 5vw;
 }
-    .textContainer *{
-        margin: 15px 0;
-    }
-    h3, p{
-        color: var(--headerColor);
-    }
+.textContainer *{
+    margin: 15px 0;
+}
+h3, p{
+    color: var(--headerColor);
+}
 </style>

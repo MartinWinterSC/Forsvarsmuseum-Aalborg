@@ -14,10 +14,10 @@
 
 <style scoped>
     article{
-        /* height: 500px; */
+        min-width: 400px;
         width: 400px;
         /* background-color: var(--headerColor); */
-        background-color: green; /* fjernes senere, erstattes med ovnstående linje*/
+        background-color: green; /* fjernes senere, erstattes af ovnstående linje*/
         border-radius: 30px;
     }
     p{
@@ -48,5 +48,28 @@
     }
     article > p{
         padding: 10px 20px 20px 20px;
+    }
+
+    article {
+        min-width: 400px;
+        width: 400px;
+        background-color: green;
+        border-radius: 30px;
+        scroll-snap-align: center; /* Apply sideScrollCard rules */
+        margin: 0 25px 25px 25px;
+    }
+    article:first-child {
+        margin-left: 5vw;
+    }
+    article:last-child {
+        margin-right: 5vw;
+    }
+
+
+    @media screen and (max-width: 950px){
+        article{
+            min-width: 300px;
+            width: 300px;
+        }
     }
 </style>

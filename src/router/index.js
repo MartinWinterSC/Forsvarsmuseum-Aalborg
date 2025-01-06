@@ -4,12 +4,12 @@ import TheFooter from '@/components/TheFooter.vue'
 import TheNav from '@/components/TheNav.vue'
 import ScrollToTop from '@/components/ScrollToTop.vue'
 import CTABtn from '@/components/CTABtn.vue'
-import ActivityCards from '@/components/ActivityCards.vue'
+import ActivityCards from '@/components/ActivityCard.vue'
 import ExhibitCard from '@/components/ExhibitCard.vue'
-import FEPCards from '@/components/FEPCards.vue'
+import FEPCards from '@/components/FEPCard.vue'
 import HeroImg from '@/components/HeroImg.vue'
 import ImgWText from '@/components/ImgWText.vue'
-import InstagramCards from '@/components/InstagramCards.vue'
+import InstagramCard from '@/components/InstagramCard.vue'
 import StickyBottomMenu from '@/components/StickyBottomMenu.vue'
 
 const router = createRouter({
@@ -41,8 +41,8 @@ const router = createRouter({
       component: CTABtn,
     },
     {
-      path: '/activityCards',
-      name: 'ActivityCards',
+      path: '/activityCard',
+      name: 'ActivityCard',
       component: ActivityCards,
     },
     {
@@ -51,8 +51,8 @@ const router = createRouter({
       component: ExhibitCard,
     },
     {
-      path: '/fEPCards',
-      name: 'FEPCards',
+      path: '/fEPCard',
+      name: 'FEPCard',
       component: FEPCards,
     },
     {
@@ -66,9 +66,9 @@ const router = createRouter({
       component: ImgWText,
     },
     {
-      path: '/instagramCards',
-      name: 'InstagramCards',
-      component: InstagramCards,
+      path: '/instagramCard',
+      name: 'InstagramCard',
+      component: InstagramCard,
     },
     {
       path: '/stickyBottomMenu',

@@ -18,6 +18,7 @@
         background-size: cover;
         border-radius: 30px;
         height: 500px;
+        min-width: 400px;
         width: 400px;
     }
     p{
@@ -36,6 +37,7 @@
     @media screen and (max-width: 950px){
         .ExhibitCardIndividual{
             height: 400px;
+            min-width: 300px;
             width: 300px;
         }
     }

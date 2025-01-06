@@ -2,7 +2,7 @@
     <!-- <h1>ActivityCards</h1> -->
     <!-- Indsæt HTML herunder -->
      
-    <article class="avtivityCardIndividual">
+    <article class="activityCardIndividual">
         <p id="activityType">Familieaktivitet</p>
         <p class="bold">DEN DØMTE ESKADRILLE</p>
         <p>Anden verdenskrig</p>
@@ -10,7 +10,7 @@
 </template>
 
 <style scoped>
-    .avtivityCardIndividual {
+    .activityCardIndividual {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -19,6 +19,7 @@
         background-size: cover;
         border-radius: 30px;
         height: 500px;
+        min-width: 400px;
         width: 400px;
         position: relative;
     }
@@ -30,10 +31,10 @@
     p.bold{
         font-weight: var(--boldWeight);
     }
-    .avtivityCardIndividual p:nth-child(2){
+    .activityCardIndividual p:nth-child(2){
         padding-bottom: 5px;
     }
-    .avtivityCardIndividual p:last-child{
+    .activityCardIndividual p:last-child{
         padding-top: 5px;
     }
     #activityType{
@@ -46,8 +47,9 @@
         margin: 20px;
     }
     @media screen and (max-width: 950px){
-        .avtivityCardIndividual{
+        .activityCardIndividual{
             height: 400px;
+            min-width: 300px;
             width: 300px;
         }
     }

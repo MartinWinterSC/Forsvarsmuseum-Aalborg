@@ -5,8 +5,8 @@
     <div class="heroContainer">
         <h1>OPLEV DANMARKS <br> MILITÆRE HISTORIE</h1>
         <div class="scrollIndicator">
-            <p id="scrollIndicatorIcon">&#xFFEC;</p>
-            <p>Udforks vores udstillinger</p>
+            <a href="#scrollToPoint"><i class="fa-solid fa-arrow-down-long" id="scrollIndicatorIcon"></i></a>
+            <p>Udforsk vores udstillinger</p>
         </div>
     </div>
 </template>
@@ -31,9 +31,32 @@
         justify-content: center;
         margin-bottom: 10px;
     }
-    p#scrollIndicatorIcon:hover{
+    #scrollIndicatorIcon{
+        animation-name: ScrollIndicationAnimation;
+        animation-duration: 1000ms;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;
+        animation-play-state: running;
+        animation-timing-function: ease-in;
+    }
+    @keyframes ScrollIndicationAnimation{
+        0%{
+            transform: translate(0px, 0px);
+        }
+        33%{
+            transform: translate(0px, 10px);
+        }
+        66%{
+            transform: translate(0px, 5px);
+        }
+        100%{
+            transform: translate(0px, 0px);
+        }
+    }
+    i#scrollIndicatorIcon:hover{
         background-color: var(--headerColor);
         color: var(--headerIconColor);
+        animation-play-state: paused;
     }
     .scrollIndicator{
         display: flex;
@@ -45,9 +68,16 @@
         bottom: 5%;
         left: 50%;
         transform: translate(-50%);
+        text-decoration: none;
     }
-    h1, p{
+    a{
+        text-decoration: none;
+    }
+    h1, p, i{
         color: var(--headerColor);
+    }
+    i#scrollIndicatorIcon{
+        font-size: 30px;
     }
     h1{
         position: absolute;
