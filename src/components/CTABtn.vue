@@ -26,9 +26,4 @@
     .textColor{
         color: var(--specialCaseColor);
     }
-    @media screen and (max-width: 950px){
-        p{
-            border-radius: 5px;
-        }
-    }
 </style>

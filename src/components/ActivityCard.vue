@@ -56,8 +56,10 @@ export default {
         margin: 20px;
     }
     .activityCardIndividual:hover{
-        transform: scale(1.1);
+        background-size: 300%;
+        /* transform: scale(1.1); */
         height: 500px;
+        transition: 0.3s;
     }
     @media screen and (max-width: 950px){
         .activityCardIndividual{

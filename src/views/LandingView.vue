@@ -9,7 +9,8 @@
     import CTABtn from '@/components/CTABtn.vue';
     import HeroImgSub from '@/components/HeroImgSub.vue';
     import TheFooter from '@/components/TheFooter.vue';
-
+    import ImgWTextAlt from '@/components/ImgWTextAlt.vue';
+    
     import velkommenTilMuseetImg from '@/assets/img/landingPage/velkommen_til_museet.jpg';
     import komPoBesog from '@/assets/img/landingPage/kom_po_besog.jpg';
     import omMuseet from '@/assets/img/landingPage/om_museet.jpg';
@@ -34,7 +35,7 @@
     import sommerfest from '@/assets/img/landingPage/instagramImg/sommerfest.jpg';
     import leopard1Kampvogn from '@/assets/img/landingPage/instagramImg/leopard1Kampvogn.jpg';
     import augustOproret from '@/assets/img/landingPage/instagramImg/augustOproret.png';
-import ImgWTextAlt from '@/components/ImgWTextAlt.vue';
+    
 </script>
 
 <template>
@@ -61,7 +62,7 @@ import ImgWTextAlt from '@/components/ImgWTextAlt.vue';
                     :imageSrc="hangaren"
                 >
                     <template #exhibitName>HANGAREN</template>
-                    <template #exhibitCatagory>Den kolde kirg</template>
+                    <template #exhibitCatagory>Den kolde krig</template>
                 </ExhibitCard>
                 <ExhibitCard
                     class="sideScrollCard"

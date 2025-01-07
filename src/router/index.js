@@ -1,16 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LandingView from '@/views/LandingView.vue'
-import TheFooter from '@/components/TheFooter.vue'
-import TheNav from '@/components/TheNav.vue'
-import ScrollToTop from '@/components/ScrollToTop.vue'
-import CTABtn from '@/components/CTABtn.vue'
-import ActivityCards from '@/components/ActivityCard.vue'
-import ExhibitCard from '@/components/ExhibitCard.vue'
-import FEPCards from '@/components/FEPCard.vue'
-import HeroImg from '@/components/HeroImg.vue'
-import ImgWText from '@/components/ImgWText.vue'
-import InstagramCard from '@/components/InstagramCard.vue'
-import StickyBottomMenu from '@/components/StickyBottomMenu.vue'
+import ChildrensBirthdayView from '@/views/ChildrensBirthdayView.vue'
+import ExhibitIndividualView from '@/views/ExhibitIndividualView.vue'
+import ExhibitOverView from '@/views/ExhibitOverview.vue'
+import FamilyNKidsView from '@/views/FamilyNKidsView.vue'
+import VisitUs from '@/views/VisitUs.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,59 +15,29 @@ const router = createRouter({
       component: LandingView,
     },
     {
-      path: '/theFooter',
-      name: 'TheFooter',
-      component: TheFooter,
+      path: '/childrensBirthdayView',
+      name: 'childrensBirthdayView',
+      component: ChildrensBirthdayView,
     },
     {
-      path: '/theNav',
-      name: 'TheNav',
-      component: TheNav,
+      path: '/exhibitIndividualView',
+      name: 'exhibitIndividualView',
+      component: ExhibitIndividualView,
     },
     {
-      path: '/scrollToTop',
-      name: 'ScrollToTop',
-      component: ScrollToTop,
+      path: '/exhibitOverView',
+      name: 'exhibitOverView',
+      component: ExhibitOverView,
     },
     {
-      path: '/CTABtn',
-      name: 'CTABtn',
-      component: CTABtn,
+      path: '/familyNKidsView',
+      name: 'familyNKidsView',
+      component: FamilyNKidsView,
     },
     {
-      path: '/activityCard',
-      name: 'ActivityCard',
-      component: ActivityCards,
-    },
-    {
-      path: '/exhibitCard',
-      name: 'ExhibitCard',
-      component: ExhibitCard,
-    },
-    {
-      path: '/fEPCard',
-      name: 'FEPCard',
-      component: FEPCards,
-    },
-    {
-      path: '/heroImg',
-      name: 'HeroImg',
-      component: HeroImg,
-    },
-    {
-      path: '/imgWText',
-      name: 'ImgWText',
-      component: ImgWText,
-    },
-    {
-      path: '/instagramCard',
-      name: 'InstagramCard',
-      component: InstagramCard,
-    },
-    {
-      path: '/stickyBottomMenu',
-      name: 'StickyBottomMenu',
-      component: StickyBottomMenu,
+      path: '/visitUs',
+      name: 'visitUs',
+      component: VisitUs,
     },
   ],
 })

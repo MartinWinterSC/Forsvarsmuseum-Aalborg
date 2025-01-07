@@ -96,7 +96,7 @@
         justify-content: space-between;
         z-index: 10;
         width: 100%;
-        background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)); 
+        background-image: linear-gradient(180deg, rgba(0,0,0,1) 20%, rgba(0,212,255,0) 100%); 
         position: fixed;
     }
     .navPointsSecondary{
