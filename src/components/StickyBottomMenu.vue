@@ -1,7 +1,5 @@
 <template>
-    <!-- <h1>StickyBottomMenu</h1> -->
-    <!-- Indsæt HTML herunder -->
-    <section>
+    <section id="bottomSticky">
         <div>
             <p class="bold">FORBERED DIT BESØG</p>
         </div>
@@ -40,10 +38,10 @@
         grid-template-columns: repeat(3, 1fr);
         background-color: var(--headerIconColor);
         padding: 15px 0;
-        position: fixed;
-        bottom: 0;
+        position: sticky;
+        top: 90vh;
         width: 100%;
-        z-index: 0;
+        z-index: 5;
     }
     .openingHours p:first-child{
         text-wrap: balance;
@@ -61,12 +59,18 @@
     div:last-child{
         border-right: none;
     }
+    section#bottomSticky{
+        margin: 0;
+    }
+
     @media screen and (max-width: 950px){
         p{
             font-size: .75rem;
         }
         img{
             height: 15px;
+            border-radius: 7.5px;
+            padding: 5px 15px;
         }
     }
 </style>

@@ -1,7 +1,4 @@
 <template>
-    <!-- <h1>HeroImg</h1> -->
-    <!-- Indsæt HTML herunder -->
-
     <div class="heroContainer">
         <h1>OPLEV DANMARKS <br> MILITÆRE HISTORIE</h1>
         <div class="scrollIndicator">
@@ -18,7 +15,8 @@
         width: 100%;
         background-repeat: no-repeat;
         background-size: cover;
-        z-index: 2;
+        z-index: 7;
+        
     }
     #scrollIndicatorIcon{
         display: flex;

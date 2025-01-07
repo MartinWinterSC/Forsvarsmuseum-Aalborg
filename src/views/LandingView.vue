@@ -1,16 +1,18 @@
 <script setup>
     import HeroImg from '@/components/HeroImg.vue';
-    // import StickyBottomMenu from '@/components/StickyBottomMenu.vue';
+    import StickyBottomMenu from '@/components/StickyBottomMenu.vue';
     import ExhibitCard from '@/components/ExhibitCard.vue'
     import ActivityCard from '@/components/ActivityCard.vue';
     import InstagramCard from '@/components/InstagramCard.vue';
-    // import FEPCard from '@/components/FEPCard.vue';
+    import FEPCard from '@/components/FEPCard.vue';
     import ImgWText from '@/components/ImgWText.vue';
     import CTABtn from '@/components/CTABtn.vue';
+    import HeroImgSub from '@/components/HeroImgSub.vue';
+    import TheFooter from '@/components/TheFooter.vue';
 
     import velkommenTilMuseetImg from '@/assets/img/landingPage/velkommen_til_museet.jpg';
-    // import omMuseet from '@/assets/img/landingPage/om_museet.jpg';
-    // import komPoBesog from '@/assets/img/landingPage/kom_po_besog.jpg';
+    import komPoBesog from '@/assets/img/landingPage/kom_po_besog.jpg';
+    import omMuseet from '@/assets/img/landingPage/om_museet.jpg';
     
     import denDomteEksadrille from '@/assets/img/landingPage/ExhibitImg/den_domte_eksadrille.jpg';
     import hangaren from '@/assets/img/landingPage/ExhibitImg/hangaren.jpg';
@@ -38,11 +40,13 @@ import ImgWTextAlt from '@/components/ImgWTextAlt.vue';
 <template>
     <main>
         <HeroImg />
-        <!-- <StickyBottomMenu /> -->
+        <StickyBottomMenu />
         <section id="scrollToPoint">
             <div class="sideScrollHeader">
                 <h2>VORES UDSTILLINGER</h2>
-                <CTABtn />
+                <CTABtn id="CTABorder">
+                    <template #CTAText>SE ALLE UDSTILLINGER</template>
+                </CTABtn>
             </div>
             <div class="sideScrollContainner">
                 <ExhibitCard
@@ -102,7 +106,7 @@ import ImgWTextAlt from '@/components/ImgWTextAlt.vue';
                     <p>Vi tilbyder en unik mulighed for komme tæt på historien gennem spændende fortællinger og sjældne genstande.</p>
                     <p>Tag familien, vennerne eller kollegerne med og få en oplevelse sammen. Vi glæder os til at byde dig velkommen og dele historien med dig!</p>                    
                 </template>
-                <template #CTAText>PLANLÆG DIT BESØG</template>
+                <template #CTAImgText>PLANLÆG DIT BESØG</template>
             </ImgWText>
         </section>
         <section>
@@ -162,8 +166,21 @@ import ImgWTextAlt from '@/components/ImgWTextAlt.vue';
             </div>
         </section>
         <section>
-            <ImgWTextAlt>
-            
+            <ImgWTextAlt
+                :imageSrc="komPoBesog"
+                imageAlt="Garnisonsmuseumets facade"
+            >
+                <template #introHeadingAlt>
+                    KOM PÅ BESØG
+                </template>
+                <template #introContentAlt>
+                    <ul>
+                        <li>Unik samling af historiske militærkøretøjer og fly mm.</li>
+                        <li>Oplev autentiske udstillinger i originale bunkere fra Anden Verdenskrig.</li>
+                        <li>Familievenlige aktiviteter og levende formidling af Aalborgs forsvarshistorie.</li>
+                    </ul>                   
+                </template>
+                <template #CTATextAlt>BESTIL BILLETTER</template>
             </ImgWTextAlt>
         </section>
         <section>
@@ -174,37 +191,37 @@ import ImgWTextAlt from '@/components/ImgWTextAlt.vue';
             <div class="sideScrollContainner">
                 <InstagramCard class="sideScrollCard"
                     :imageSrc="instagrampost1"
-                    imageAlt=""
+                    imageAlt="Kommende jægerpilot "
                 >
                     <template #InstaContent>Kommende jægerpilot #Familiehygge #TætPåHistorien #Forsvarsmuseet </template>
                 </InstagramCard>
                 <InstagramCard class="sideScrollCard"
                     :imageSrc="flagDag"
-                    imageAlt=""
+                    imageAlt="Flag Dag"
                 >
                     <template #InstaContent>Glædelig 5. september og Flagdag for Danmarks udsendte.  i dag, vi er sammen om at dele historier om nye og gamle missioner.</template>
                 </InstagramCard>
                 <InstagramCard class="sideScrollCard"
                     :imageSrc="peterOrum"
-                    imageAlt=""
+                    imageAlt="Peter Ørum"
                 >
                     <template #InstaContent>Vores amerikanske udsendte Peter Ørum vendte i lørdags hjem for en kort stund for at være guide ved Aalborg Forsvars- og Garnisonsmuseum.</template>
                 </InstagramCard>
                 <InstagramCard class="sideScrollCard"
                     :imageSrc="sommerfest"
-                    imageAlt=""
+                    imageAlt="Sommerfest"
                 >
                     <template #InstaContent>Så er sommerfesten skudt i gang!</template>
                 </InstagramCard>
                 <InstagramCard class="sideScrollCard"
                     :imageSrc="leopard1Kampvogn"
-                    imageAlt=""
+                    imageAlt="Leopard 1"
                 >
                     <template #InstaContent>Ukraine modtog for nyligt de første 10 Leopard 1-kampvogne fra Danmark. Kom og se den på museet.</template>
                 </InstagramCard>
                 <InstagramCard class="sideScrollCard"
                     :imageSrc="augustOproret"
-                    imageAlt=""
+                    imageAlt="August Oprøret"
                 >
                     <template #InstaContent>Kom og oplev vores nye udstilling om augustoprøret i 1943.</template>
                 </InstagramCard>
@@ -212,15 +229,21 @@ import ImgWTextAlt from '@/components/ImgWTextAlt.vue';
         </section>
         <section>
             <FEPCard
-                :imageSrc="komPoBesog"
+                :imageSrc="omMuseet"
             >
                 <template #FEPHeading>OM MUSEET</template>
+                <template #CTAFEPText>BESTIL BILLETTER</template>
             </FEPCard>
         </section>
+        <!-- <HeroImgSub /> --> 
+  <TheFooter />
     </main>
 </template>
 
 <style scoped>
+    #CTABorder{
+        border: 2px solid var(--specialCaseColor);
+    }
     .sideScrollHeader{
         display: flex;
         justify-content: space-between;
@@ -261,7 +284,13 @@ import ImgWTextAlt from '@/components/ImgWTextAlt.vue';
     #insta{
         flex-direction: column;
     }
-    p{
+    p, li{
         color: var(--headerColor);
+    }
+    li{
+        font-size: 1rem;
+    }
+    ul{
+        margin: 25px;
     }
 </style>

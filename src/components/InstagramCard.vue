@@ -58,21 +58,28 @@
     article > p{
         padding: 10px 20px 20px 20px;
     }
-
-    article {
-        
-    }
     article:first-child {
         margin-left: 5vw;
     }
     article:last-child {
         margin-right: 5vw;
     }
+    article:hover{
+        transform: scale(1.1);
+        height: 460px;
+    }
 
     @media screen and (max-width: 950px){
         article{
             min-width: 300px;
             width: 300px;
+        }
+        article:hover{
+            transform: scale(1.1);
+            height: 500px;
+        }
+        .instaInfo img, article{
+            border-radius: 15px;
         }
     }
 </style>

@@ -26,6 +26,8 @@ export default {
         min-width: 400px;
         width: 400px;
         position: relative;
+        background-position: center;
+        overflow: hidden;
     }
 
     p{
@@ -34,12 +36,15 @@ export default {
     }
     p.bold{
         font-weight: var(--boldWeight);
+         
     }
     .activityCardIndividual p:nth-child(2){
         padding-bottom: 5px;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)); 
     }
     .activityCardIndividual p:last-child{
         padding-top: 5px;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8));
     }
     #activityType{
         position: absolute;
@@ -50,11 +55,25 @@ export default {
         padding: 5px 15px;
         margin: 20px;
     }
+    .activityCardIndividual:hover{
+        transform: scale(1.1);
+        height: 500px;
+    }
     @media screen and (max-width: 950px){
         .activityCardIndividual{
             height: 400px;
             min-width: 300px;
             width: 300px;
+        }
+        .activityCardIndividual:hover{
+            transform: scale(1.1);
+            height: 400px;
+        }
+        #activityType{
+            border-radius: 25px;
+        }
+        .activityCardIndividual{
+            border-radius: 15px;
         }
     }
 </style>
