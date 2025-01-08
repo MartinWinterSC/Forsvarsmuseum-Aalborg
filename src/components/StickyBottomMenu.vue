@@ -39,7 +39,7 @@
         background-color: var(--headerIconColor);
         padding: 15px 0;
         position: sticky;
-        top: 90vh;
+        bottom: 0;
         width: 100%;
         z-index: 5;
     }
@@ -61,6 +61,9 @@
     }
     section#bottomSticky{
         margin: 0;
+    }
+    img:hover{
+        background-color: var(--headerColor);
     }
 
     @media screen and (max-width: 950px){

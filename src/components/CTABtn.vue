@@ -14,14 +14,14 @@
         padding: 10px 30px;
         border-radius: 10px;
         font-size: 1rem;
-        color: var(--specialCaseColor);
+        color: var(--headerColor);
         font-weight: var(--boldWeight);
         align-self: center;
         background-color: var(--backgroundPrimaryColor);
     }
     p:hover{
-        color: var(--headerColor);
-        background-color: var(--specialCaseColor);
+        color: var(--specialCaseColor);
+        background-color: var(--headerColor);
     }
     .textColor{
         color: var(--specialCaseColor);

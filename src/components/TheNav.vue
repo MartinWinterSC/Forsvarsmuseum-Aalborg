@@ -15,7 +15,7 @@
                 <li class="active">DK</li>
             </ul>
             <p class="ticketOrdering">
-                BESTIL BILETTER
+                BESTIL BILLETTER
             </p>
             <img src="./icons/bars-solid.svg" alt="" class="navMenuOpen">
             <!--  -->
@@ -91,12 +91,13 @@
     .navPointsPrimary img{
         height: 100px;
         margin: 0;
+        margin-left: calc(5vw - 20px);
     }
     nav{
         justify-content: space-between;
         z-index: 10;
         width: 100%;
-        background-image: linear-gradient(180deg, rgba(0,0,0,1) 20%, rgba(0,212,255,0) 100%); 
+        background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
         position: fixed;
     }
     .navPointsSecondary{
@@ -123,10 +124,11 @@
     .navPointsSecondary img{
         height: 50px;
         margin-left: 25px;
-        margin-right: 5vw;
+        margin-right: calc(5vw - 20px);
     }
     .desktopNavPoints{
         padding: 0;
+        
     }
     .desktopNavPoints:last-child{
         padding: 0;

@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import LandingView from '@/views/LandingView.vue'
 import ChildrensBirthdayView from '@/views/ChildrensBirthdayView.vue'
 import ExhibitIndividualView from '@/views/ExhibitIndividualView.vue'
-import ExhibitOverView from '@/views/ExhibitOverview.vue'
+import ExhibitOverView from '@/views/ExhibitOverView.vue'
 import FamilyNKidsView from '@/views/FamilyNKidsView.vue'
 import VisitUs from '@/views/VisitUs.vue'
 

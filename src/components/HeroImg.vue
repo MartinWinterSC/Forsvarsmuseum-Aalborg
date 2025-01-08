@@ -1,22 +1,37 @@
 <template>
-    <div class="heroContainer">
-        <h1>OPLEV DANMARKS <br> MILITÆRE HISTORIE</h1>
-        <div class="scrollIndicator">
-            <a href="#scrollToPoint"><i class="fa-solid fa-arrow-down-long" id="scrollIndicatorIcon"></i></a>
-            <p>Udforsk vores udstillinger</p>
-        </div>
+  <div class="heroContainer">
+    <video ref="heroVideo" autoplay loop muted playsinline>
+      <source src="@/assets/img/herovideo_desktop.mp4" type="video/mp4" />
+    </video>
+    <h1>OPLEV DANMARKS <br> MILITÆRE HISTORIE</h1>
+    <div class="scrollIndicator">
+      <a href="#scrollToPoint">
+        <i class="fa-solid fa-arrow-down-long" id="scrollIndicatorIcon"></i>
+      </a>
+      <p>Udforsk vores udstillinger</p>
     </div>
+    <button @click="toggleVideo" class="pause-play-btn">
+      <i :class="isPlaying ? 'fa-solid fa-circle-pause' : 'fa-solid fa-circle-play'"></i>
+    </button>
+  </div>
 </template>
 
 <style scoped>
     .heroContainer{
-        background-image: url(../assets/img/heroGif_DT.gif);
+        background-image: url(../assets/img/herovideo_desktop_snapshot.png);
         height: 100vh;
         width: 100%;
         background-repeat: no-repeat;
         background-size: cover;
         z-index: 7;
-        
+        position: relative;
+    }
+    video{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: relative;
+        z-index: 1;
     }
     #scrollIndicatorIcon{
         display: flex;
@@ -67,6 +82,7 @@
         left: 50%;
         transform: translate(-50%);
         text-decoration: none;
+        z-index: 8;
     }
     a{
         text-decoration: none;
@@ -82,10 +98,48 @@
         margin-left: 5vw;
         top: 50vh;
         transform: translate(0, -50%);
+        z-index: 7;
     }
+    .pause-play-btn {
+        position: absolute;
+        z-index: 7;
+        right: 5vw;
+        bottom: 5%;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 48px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     @media screen and (max-width: 950px){
         .heroContainer{
             background-image: url(../assets/img/heroGif_MB.gif);
         }
     }
 </style>
+
+<script>
+    export default {
+        data() {
+            return {
+                isPlaying: true
+            };
+        },
+        methods: {
+            toggleVideo() {
+                const video = this.$refs.heroVideo;
+                if (video.paused) {
+                    video.play();
+                    this.isPlaying = true;
+                } else {
+                    video.pause();
+                    this.isPlaying = false;
+                }
+            },
+        },
+    };
+</script>

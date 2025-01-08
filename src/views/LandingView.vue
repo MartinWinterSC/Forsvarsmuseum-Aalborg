@@ -6,10 +6,9 @@
     import InstagramCard from '@/components/InstagramCard.vue';
     import FEPCard from '@/components/FEPCard.vue';
     import ImgWText from '@/components/ImgWText.vue';
-    import CTABtn from '@/components/CTABtn.vue';
-    import HeroImgSub from '@/components/HeroImgSub.vue';
-    import TheFooter from '@/components/TheFooter.vue';
     import ImgWTextAlt from '@/components/ImgWTextAlt.vue';
+    import CTABtn from '@/components/CTABtn.vue';
+    import TheFooter from '@/components/TheFooter.vue';
     
     import velkommenTilMuseetImg from '@/assets/img/landingPage/velkommen_til_museet.jpg';
     import komPoBesog from '@/assets/img/landingPage/kom_po_besog.jpg';
@@ -18,7 +17,7 @@
     import denDomteEksadrille from '@/assets/img/landingPage/ExhibitImg/den_domte_eksadrille.jpg';
     import hangaren from '@/assets/img/landingPage/ExhibitImg/hangaren.jpg';
     import jagerKorpset from '@/assets/img/landingPage/ExhibitImg/jagerKorpset.jpg';
-    import besættelsestiden from '@/assets/img/landingPage/ExhibitImg/besættelsestiden.jpeg';
+    import besaettelsestiden from '@/assets/img/landingPage/ExhibitImg/besaettelsestiden.jpeg';
     import handvaben from '@/assets/img/landingPage/ExhibitImg/handvaben.jpg';
     import flyvevabnet from '@/assets/img/landingPage/ExhibitImg/flyvevabnet.jpg';
 
@@ -41,7 +40,6 @@
 <template>
     <main>
         <HeroImg />
-        <StickyBottomMenu />
         <section id="scrollToPoint">
             <div class="sideScrollHeader">
                 <h2>VORES UDSTILLINGER</h2>
@@ -73,7 +71,7 @@
                 </ExhibitCard>
                 <ExhibitCard
                     class="sideScrollCard"
-                    :imageSrc="besættelsestiden"
+                    :imageSrc="besaettelsestiden"
                 >
                     <template #exhibitName>BESÆTTELSESTIDEN</template>
                     <template #exhibitCatagory>Anden verdenskrig</template>
@@ -236,8 +234,9 @@
                 <template #CTAFEPText>BESTIL BILLETTER</template>
             </FEPCard>
         </section>
-        <!-- <HeroImgSub /> --> 
-  <TheFooter />
+        <ImgWTextImproved />
+        <TheFooter />
+        <StickyBottomMenu />
     </main>
 </template>
 
@@ -255,20 +254,17 @@
         overflow-x: scroll;
         scroll-snap-type: x mandatory;
     }
-    .sideScrollContainner::-webkit-scrollbar {
+    .sideScrollContainner::-webkit-scrollbar{
       height: 12px;
     }
-
     .sideScrollContainner::-webkit-scrollbar-thumb,
-    .sideScrollContainner::-webkit-scrollbar-track {
+    .sideScrollContainner::-webkit-scrollbar-track{
       border-radius: 92px;
     }
-
-    .sideScrollContainner::-webkit-scrollbar-thumb {
+    .sideScrollContainner::-webkit-scrollbar-thumb{
       background: var(--specialCaseColor);
     }
-
-    .sideScrollContainner::-webkit-scrollbar-track {
+    .sideScrollContainner::-webkit-scrollbar-track{
       background: var(--headerColor);
       margin: 0 5vw;
     }
@@ -284,6 +280,9 @@
     }
     #insta{
         flex-direction: column;
+    }
+    #insta p{
+        color: var(--headerIconColor);
     }
     p, li{
         color: var(--headerColor);

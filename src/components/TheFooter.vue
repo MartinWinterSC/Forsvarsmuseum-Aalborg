@@ -39,7 +39,7 @@
     }
     footer{
         color: var(--headerColor);
-        padding: 50px 5vw 15vh 5vw;
+        padding: 50px 5vw;
         background-color: var(--specialCaseColor);
         z-index: 7;
     }

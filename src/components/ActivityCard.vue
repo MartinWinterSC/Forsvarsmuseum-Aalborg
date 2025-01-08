@@ -7,29 +7,44 @@ export default {
 </script>
 
 <template>
-    <article class="activityCardIndividual" :style="{ backgroundImage: `url(${imageSrc})` }">
-        <p id="activityType"><slot name="activityCatagory"></slot></p>
-        <p class="bold"><slot name="activityName"></slot></p>
-        <p><slot name="activityAvailability"></slot></p>
+    <article>
+        <div class="activityCardIndividual" :style="{ backgroundImage: `url(${imageSrc})` }"></div>
+        <p class="activityType"><slot name="activityCatagory"></slot></p>
+        <div class="activityInfo">
+            <p class="bold"><slot name="activityName"></slot></p>
+            <p><slot name="activityAvailability"></slot></p>
+        </div>
     </article>
 </template>
 
 <style scoped>
-    .activityCardIndividual {
+    article{
+        height: 500px;
+        min-width: 400px;
+        width: 400px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 30px;
+    }
+    .activityCardIndividual{
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         background-repeat: no-repeat;
         background-size: cover;
-        border-radius: 30px;
-        height: 500px;
-        min-width: 400px;
-        width: 400px;
-        position: relative;
+        position: absolute;
         background-position: center;
         overflow: hidden;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
     }
-
+    .activityInfo{
+        position: absolute;
+        z-index: 2;
+        bottom: 0;
+        width: 100%;
+    }
     p{
         color: var(--headerColor);
         padding: 20px;
@@ -38,15 +53,15 @@ export default {
         font-weight: var(--boldWeight);
          
     }
-    .activityCardIndividual p:nth-child(2){
+    .activityInfo p:first-child{
         padding-bottom: 5px;
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)); 
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)); 
     }
-    .activityCardIndividual p:last-child{
+    .activityInfo p:last-child{
         padding-top: 5px;
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8));
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1));
     }
-    #activityType{
+    .activityType{
         position: absolute;
         top: 0;
         background-color: var(--headerIconColor);
@@ -54,23 +69,21 @@ export default {
         border-radius: 50px;
         padding: 5px 15px;
         margin: 20px;
+        z-index: 2;
     }
-    .activityCardIndividual:hover{
-        background-size: 300%;
-        /* transform: scale(1.1); */
-        height: 500px;
-        transition: 0.3s;
+    article:hover .activityCardIndividual{
+        transform: scale(1.1);
     }
     @media screen and (max-width: 950px){
-        .activityCardIndividual{
+        article{
             height: 400px;
             min-width: 300px;
             width: 300px;
         }
-        .activityCardIndividual:hover{
+        /* .activityCardIndividual:hover{
             transform: scale(1.1);
             height: 400px;
-        }
+        } */
         #activityType{
             border-radius: 25px;
         }

@@ -12,7 +12,7 @@ export default {
 };
 </script>
 
-<<template>
+<template>
     <section>
         <img :src="imageSrc" :alt="imageAlt" />
         <div class="textContainer">
@@ -28,34 +28,31 @@ export default {
 </template>
 
 <style scoped>
-    section {
+    section{
+        display: grid;
+        grid-template-columns: 400px 400px 1fr;
         position: relative;
-        height: 80vh;
+        margin: 0 5vw;
     }
-    img {
-        width: 100%;
-        position: absolute;
-        top: 0;
-        right: 0;
+    img{
+        grid-column: 2 / span 2;
+        height: 70vh;
+        position: relative;
         z-index: 1;
-        height: calc(60vh + 100px);
-        object-fit: cover;
-        width: 60%;
-        margin-right: 5vw;
         border-radius: 30px;
+        object-fit: cover;
+        width: 100%;
     }
-    .textContainer {
+    .textContainer{
+        grid-column: 1 / span 2;
         position: absolute;
         top: 50%;
+        transform: translateY(-50%);
         left: 0;
         z-index: 2;
         background-color: var(--interactivePrimaryColor);
         padding: 30px;
-        max-width: 40%;
-        box-sizing: border-box;
-        transform: translateY(-50%);
         border-radius: 30px;
-        margin-left: 5vw;
     }
     .textContainer *{
         margin: 15px 0;
@@ -64,31 +61,25 @@ export default {
         color: var(--headerColor);
     }
 
-    @media screen and (max-width: 1400px){
-        .textContainer{
-            max-width: 50%
-        }
-    }
-    @media screen and (max-width: 1200px){
-        .textContainer{
-            max-width: 60%
-        }
-    }
     @media screen and (max-width: 950px){
         .textContainer, img{
             border-radius: 15px;
         }
+        section{
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
+        }
         img{
-            width: 90%;
+            grid-column: 1 / span 3;
+            grid-row: 1 / span 2;
+            width: 100%;
         }
         .textContainer{
-            right: 50%;
-            transform: translate(50%);
-            top: 50%;
-            max-width: unset;
-        }
-        section{
-            padding-bottom: 100px;
+            grid-column: 1 / span 3;
+            grid-row: 2 / span 2;
+            transform: translateY(-50%);
+            margin: 0 5vw;
+            bottom: 0;
         }
     }
 </style>

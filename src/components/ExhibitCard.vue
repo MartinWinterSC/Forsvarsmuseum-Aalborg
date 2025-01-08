@@ -7,54 +7,69 @@ export default {
 </script>
 
 <template>
-    <article class="ExhibitCardIndividual" :style="{ backgroundImage: `url(${imageSrc})` }">
-        <p class="bold"><slot name="exhibitName"></slot></p>
-        <p><slot name="exhibitCatagory"></slot></p>
+    <article>
+        <div class="exhibitCardIndividual" :style="{ backgroundImage: `url(${imageSrc})` }"></div>
+        <div class="exhibitInfo">
+            <p class="bold"><slot name="exhibitName"></slot></p>
+            <p><slot name="exhibitCatagory"></slot></p>
+        </div>
     </article>
 </template>
 
 <style scoped>
-    .ExhibitCardIndividual{
+    .exhibitCardIndividual{
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         background-repeat: no-repeat;
         background-size: cover;
-        border-radius: 30px;
-        height: 500px;
-        min-width: 400px;
-        width: 400px;
+        height: 100%;
+        width: 100%;
         background-position: center;
         overflow: hidden;
+        position: absolute;
+        z-index: 1;
     }
-    p {
+    p{
         padding: 20px;
         color: var(--headerColor);
     }
-    p.bold {
+    p.bold{
         font-weight: var(--boldWeight);
     }
-    .ExhibitCardIndividual p:first-child{
+    .exhibitInfo p:first-child{
         padding-bottom: 5px;
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
     }
-    .ExhibitCardIndividual p:last-child{
+    .exhibitInfo p:last-child{
         padding-top: 5px;
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8));
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1));
     }
-    .ExhibitCardIndividual:hover{
+    article:hover .exhibitCardIndividual{
         transform: scale(1.1);
-        height: 500px;
     }
-    
+    article{
+        overflow: hidden;
+        height: 500px;
+        min-width: 400px;
+        border-radius: 30px;
+        position: relative;
+    }
+    .exhibitInfo{
+        position: absolute;
+        z-index: 2; 
+        width: 100%;
+        bottom: 0;
+    }
+
     @media screen and (max-width: 950px){
-        .ExhibitCardIndividual {
+        article {
             height: 400px;
             min-width: 300px;
-            width: 300px;
+            /* width: 300px; */
             border-radius: 15px;
         }
-        .ExhibitCardIndividual:hover{
+        .exhibitCardIndividual:hover{
             transform: scale(1.1);
             height: 400px;
         }
