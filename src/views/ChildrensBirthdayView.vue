@@ -32,14 +32,10 @@ import CTABtn from "@/components/CTABtn.vue";
   <ImgWTextAlt :imageSrc="barnITank" imageAlt="Garnisonsmuseumets facade">
     <template #introHeadingAlt> Fødselsdagspakke </template>
     <template #introContentAlt>
-      <ul>
-        <li>
-          En guidet tur med fokus på børnevenlige historier og sjove fakta.
-        </li>
-        <li>Aktiviteter som skattejagt eller "spiontræning."</li>
+      <p>- En guidet tur med fokus på børnevenlige historier og sjove fakta.</p>
+      <p>- Aktiviteter som skattejagt eller "spiontræning."</p>
 
-        <li>Mulighed for at spise medbragt mad.</li>
-      </ul>
+      <p>- Mulighed for at spise medbragt mad.</p>
     </template>
     <template #CTATextAlt>BESTIL BILLETTER</template>
   </ImgWTextAlt>
