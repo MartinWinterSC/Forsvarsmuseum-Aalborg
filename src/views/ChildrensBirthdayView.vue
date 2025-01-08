@@ -73,4 +73,14 @@ import CTABtn from "@/components/CTABtn.vue";
 #CTABorder {
   margin-top: 2.5rem;
 }
+@media screen and (max-width: 950px) {
+  .kontaktFødselsdag {
+    margin: 5rem 5vw;
+    width: 80%;
+  }
+  .praktiskInformation {
+    margin: 5rem 5vw;
+    width: 80%;
+  }
+}
 </style>
