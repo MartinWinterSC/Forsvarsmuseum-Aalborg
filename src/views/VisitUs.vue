@@ -86,7 +86,6 @@ export default {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
-  padding: 20px;
   margin-left: 5vw;
   margin-right: 5vw;
   margin-bottom: 5rem;
@@ -125,6 +124,9 @@ export default {
 
 .arrow.rotate {
   transform: rotate(180deg);
+}
+section{
+  margin-bottom: 5rem;
 }
 @media screen and (max-width: 950px) {
   .accordion-grid {
