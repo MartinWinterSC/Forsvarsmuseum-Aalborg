@@ -1,16 +1,26 @@
 <script setup>
-import ImgWTextAlt from "@/components/ImgWTextAlt.vue";
+import ImgWText from "@/components/ImgWText.vue";
+import HeroImgSub from '@/components/HeroImgSub.vue';
+import ActivityCard from "@/components/ActivityCard.vue";
+
 import pigeBillede from "@/assets/img/family/pigeSomJægerpilot.jpg";
 import AndenVerdensKrigIBornehojde from "@/assets/img/landingPage/ActivityImg/AndenVerdensKrigIBornehojde.jpg";
 import aktivitetpilot from "@/assets/img/landingPage/ActivityImg/aktivitet_pilot.jpg";
 import aktivitetSeCockpittet from "@/assets/img/landingPage/ActivityImg/aktivitet_se_cockpittet.jpg";
 import aktivitetChurchilllobet from "@/assets/img/landingPage/ActivityImg/aktivitet_churchilllobet.jpg";
-import ActivityCard from "@/components/ActivityCard.vue";
+import FamilyNKids from "@/assets/img/FamilyNKids/FamilyNKids.jpg";
 </script>
 <template>
-  <ImgWTextAlt :imageSrc="pigeBillede" imageAlt="Pige som jægerpilot">
-    <template #introHeadingAlt> OPLEV HISTORIEN PÅ FORSVARSMUSEET </template>
-    <template #introContentAlt>
+  <HeroImgSub
+    :imageSrc="FamilyNKids"
+  >
+    <template #subPageHeading>BØRN OG FAMILIER</template>
+    <template #subPageIntro>Find alt du behøver vide inde begøs hos os</template>
+  </HeroImgSub>
+  <section>
+    <ImgWText :imageSrc="pigeBillede" imageAlt="Pige som jægerpilot">
+    <template #introHeading> OPLEV HISTORIEN PÅ FORSVARSMUSEET </template>
+    <template #introContent>
       <p>
         Tag familien med og dyk ned i en spændende verden af historie og
         teknologi på Forsvarsmuseet! Børn og unge kan deltage i sjove
@@ -24,7 +34,9 @@ import ActivityCard from "@/components/ActivityCard.vue";
       </p>
     </template>
     <template #CTATextAlt>BESTIL BILLETTER</template>
-  </ImgWTextAlt>
+  </ImgWText>
+  </section>
+  
   <div class="textContainerReview">
     <p id="citat">
       "Jeg havde en mega fed dag med masser af sjove opgaver og spændende
@@ -69,6 +81,9 @@ import ActivityCard from "@/components/ActivityCard.vue";
   justify-content: space-between;
   margin: 50px 5vw 25px 5vw;
 }
+p{
+  color: var(--headerColor);
+}
 .sideScrollContainner {
   display: flex;
   overflow-x: scroll;
@@ -77,16 +92,13 @@ import ActivityCard from "@/components/ActivityCard.vue";
 .sideScrollContainner::-webkit-scrollbar {
   height: 12px;
 }
-
 .sideScrollContainner::-webkit-scrollbar-thumb,
 .sideScrollContainner::-webkit-scrollbar-track {
   border-radius: 92px;
 }
-
 .sideScrollContainner::-webkit-scrollbar-thumb {
   background: var(--specialCaseColor);
 }
-
 .sideScrollContainner::-webkit-scrollbar-track {
   background: var(--headerColor);
   margin: 0 5vw;

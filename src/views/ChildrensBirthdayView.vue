@@ -1,12 +1,22 @@
 <script setup>
 import ImgWText from "@/components/ImgWText.vue";
 import ImgWTextAlt from "@/components/ImgWTextAlt.vue";
+import HeroImgSub from '@/components/HeroImgSub.vue';
+
 import dreng from "@/assets/img/ChildrenBirthdayPage/dreng.jpg";
 import barnITank from "@/assets/img/ChildrenBirthdayPage/barnITank.jpg";
-import CTABtn from "@/components/CTABtn.vue";
+import boerneFoedelsdag from "@/assets/img/ChildrenBirthdayPage/boerneFoedelsdag.jpg";
+
 </script>
 <template>
-  <ImgWText :imageSrc="dreng" imageAlt="Dreng på museum">
+  <HeroImgSub
+    :imageSrc="boerneFoedelsdag"
+  >
+    <template #subPageHeading>BØRNEFØDSELSDAG</template>
+    <template #subPageIntro>Giv dine børn en sjov og lærerig fødselsdag</template>
+  </HeroImgSub>
+  <section>
+    <ImgWText :imageSrc="dreng" imageAlt="Dreng på museum">
     <template #introHeading> Et fødselsdagseventyr </template>
     <template #introContent>
       <p>
@@ -21,6 +31,8 @@ import CTABtn from "@/components/CTABtn.vue";
     </template>
     <template #CTAImgText>PLANLÆG DIT BESØG</template>
   </ImgWText>
+  </section>
+  
   <div class="praktiskInformation">
     <h2>Praktisk information</h2>
     <p>
@@ -46,9 +58,6 @@ import CTABtn from "@/components/CTABtn.vue";
       masser af spænding. Vi glæder os til at skabe en uforglemmelig dag for
       jer!
     </p>
-    <CTABtn id="CTABorder">
-      <template #CTAText>SE ALLE UDSTILLINGER</template>
-    </CTABtn>
   </div>
 </template>
 <style scoped>
@@ -68,6 +77,12 @@ import CTABtn from "@/components/CTABtn.vue";
 }
 #CTABorder {
   margin-top: 2.5rem;
+}
+p{
+  color: var(--headerColor);
+}
+p:not(section p){
+  color: var(--headerIconColor);
 }
 @media screen and (max-width: 950px) {
   .kontaktFødselsdag {

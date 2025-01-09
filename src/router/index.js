@@ -4,7 +4,7 @@ import ChildrensBirthdayView from '@/views/ChildrensBirthdayView.vue'
 import ExhibitIndividualView from '@/views/ExhibitIndividualView.vue'
 import ExhibitOverView from '@/views/ExhibitOverView.vue'
 import FamilyNKidsView from '@/views/FamilyNKidsView.vue'
-import VisitUs from '@/views/VisitUs.vue'
+import VisitUsView from '@/views/VisitUsView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,9 +35,9 @@ const router = createRouter({
       component: FamilyNKidsView,
     },
     {
-      path: '/visitUs',
-      name: 'visitUs',
-      component: VisitUs,
+      path: '/visitUsView',
+      name: 'visitUsView',
+      component: VisitUsView,
     },
   ],
 })
