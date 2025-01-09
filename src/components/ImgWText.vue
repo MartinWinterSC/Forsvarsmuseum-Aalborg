@@ -8,6 +8,7 @@ export default {
     props: {
         imageSrc: { type: String, required: true },
         imageAlt: { type: String, required: true },
+        hasCTA: { type: Boolean, default: false }
     },
 };
 </script>
@@ -20,7 +21,7 @@ export default {
                 <slot name="introHeading"></slot>
             </h3>
             <slot name="introContent"></slot>
-            <CTABtn>
+            <CTABtn v-if="hasCTA">
                 <slot name="CTAImgText"></slot>
             </CTABtn>
         </div>
@@ -66,7 +67,7 @@ export default {
             border-radius: 15px;
         }
         section{
-            grid-template-rows: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
             grid-template-columns: repeat(3, 1fr);
         }
         img{
@@ -77,8 +78,8 @@ export default {
         .textContainer{
             grid-column: 1 / span 3;
             grid-row: 2 / span 2;
-            transform: translateY(-50%);
             margin: 0 5vw;
+            top: unset;
         }
     }
 </style>

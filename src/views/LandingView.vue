@@ -47,7 +47,7 @@
                     <template #CTAText>SE ALLE UDSTILLINGER</template>
                 </CTABtn>
             </div>
-            <div class="sideScrollContainner">
+            <div class="sideScrollContainer">
                 <ExhibitCard
                     class="sideScrollCard"
                     :imageSrc="denDomteEksadrille"
@@ -96,6 +96,7 @@
             <ImgWText 
                 :imageSrc="velkommenTilMuseetImg"
                 imageAlt="Garnisonsmuseumets facade"
+                :hasCTA="true"
             >
                 <template #introHeading>
                     Velkommen til Aalborg Forsvars- og Garnisonsmuseum
@@ -112,7 +113,7 @@
             <div class="sideScrollHeader">
                 <h2>AKTIVITETER</h2>
             </div>
-            <div class="sideScrollContainner">
+            <div class="sideScrollContainer">
                 <ActivityCard
                     class="sideScrollCard"
                     :imageSrc="AndenVerdensKrigIBornehojde"
@@ -168,16 +169,15 @@
             <ImgWTextAlt
                 :imageSrc="komPoBesog"
                 imageAlt="Garnisonsmuseumets facade"
+                :hasCTA="true"
             >
                 <template #introHeadingAlt>
                     KOM PÅ BESØG
                 </template>
                 <template #introContentAlt>
-                    <ul>
-                        <li>Unik samling af historiske militærkøretøjer og fly mm.</li>
-                        <li>Oplev autentiske udstillinger i originale bunkere fra Anden Verdenskrig.</li>
-                        <li>Familievenlige aktiviteter og levende formidling af Aalborgs forsvarshistorie.</li>
-                    </ul>                   
+                    <p>- Unik samling af historiske militærkøretøjer og fly mm.</p>
+                    <p>- Oplev autentiske udstillinger i originale bunkere fra Anden Verdenskrig.</p>
+                    <p>- Familievenlige aktiviteter og levende formidling af Aalborgs forsvarshistorie.</p>                  
                 </template>
                 <template #CTATextAlt>BESTIL BILLETTER</template>
             </ImgWTextAlt>
@@ -187,7 +187,7 @@
                 <h2>INSTAGRAM</h2>
                 <p>Del jeres billeder med hash #forsvarsmuseet, <br> så bliver de spotlighted her på siden</p>
             </div>
-            <div class="sideScrollContainner">
+            <div class="sideScrollContainer">
                 <InstagramCard class="sideScrollCard"
                     :imageSrc="instagrampost1"
                     imageAlt="Kommende jægerpilot "
@@ -234,7 +234,6 @@
                 <template #CTAFEPText>BESTIL BILLETTER</template>
             </FEPCard>
         </section>
-        <ImgWTextImproved />
         <TheFooter />
         <StickyBottomMenu />
     </main>
@@ -249,24 +248,25 @@
         justify-content: space-between;
         margin: 50px 5vw 25px 5vw;
     }
-    .sideScrollContainner{
+    .sideScrollContainer{
         display: flex;
         overflow-x: scroll;
         scroll-snap-type: x mandatory;
+        align-items: flex-start;
     }
-    .sideScrollContainner::-webkit-scrollbar{
-      height: 12px;
+    .sideScrollContainer::-webkit-scrollbar{
+        height: 12px;
     }
-    .sideScrollContainner::-webkit-scrollbar-thumb,
-    .sideScrollContainner::-webkit-scrollbar-track{
-      border-radius: 92px;
+    .sideScrollContainer::-webkit-scrollbar-thumb,
+    .sideScrollContainer::-webkit-scrollbar-track{
+        border-radius: 92px;
     }
-    .sideScrollContainner::-webkit-scrollbar-thumb{
-      background: var(--specialCaseColor);
+    .sideScrollContainer::-webkit-scrollbar-thumb{
+        background: var(--specialCaseColor);
     }
-    .sideScrollContainner::-webkit-scrollbar-track{
-      background: var(--headerColor);
-      margin: 0 5vw;
+    .sideScrollContainer::-webkit-scrollbar-track{
+        background: var(--headerColor);
+        margin: 0 5vw;
     }
     .sideScrollCard{
         scroll-snap-align: center;

@@ -41,19 +41,21 @@
         <template #subPageIntro>Her kan du se alle vores udstillinger</template>
     </HeroImgSub>
     <section class="localnav">
-        <p>SKIP TIL</p>
-        <div class="localNavPointsMobile">
-            <i class="fa-solid fa-chevron-left scroll"></i>
-            <div class="localNavPoints">
-                <a href="#exhibitCategory1">2. VERDENSKRIG</a>
-                <a href="#exhibitCategory2">KOLDE KRIG</a>
-                <a href="#exhibitCategory3">TOTALFORSVARET</a>
-                <a href="#exhibitCategory4">AALBORG GARNISON</a>
-                <a href="#exhibitCategory5">1864</a>  
-            </div>
-            <i class="fa-solid fa-chevron-right "></i>
+    <p>SKIP TIL</p>
+    <div class="localNavPointsMobile">
+        <i class="fa-solid fa-chevron-left scroll"></i>
+        <div class="localNavGradientStart"></div>
+        <div class="localNavPoints">
+            <a href="#exhibitCategory1">2. VERDENSKRIG</a>
+            <a href="#exhibitCategory2">KOLDE KRIG</a>
+            <a href="#exhibitCategory3">TOTALFORSVARET</a>
+            <a href="#exhibitCategory4">AALBORG GARNISON</a>
+            <a href="#exhibitCategory5">1864</a>
         </div>
-    </section>
+        <div class="localNavGradientEnd"></div>
+        <i class="fa-solid fa-chevron-right"></i>
+    </div>
+</section>
     <section class="categorySingle" id="exhibitCategory1">
         <h2>2. VERDENSKRIG</h2>
         <div class="exhibitContainer">
@@ -199,12 +201,13 @@
 
 <style scoped>
     .localNavPoints{
+        position: relative;
         background-color: var(--headerIconColor);
         padding: 5px;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        /* border-radius: 15px; */
+        overflow: hidden;
     }
     .localNavPoints a{
         color: var(--headerColor);
@@ -230,32 +233,40 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 50px 20px;
     }
+
     @media screen and (max-width: 1400px){
         .exhibitContainer{
             grid-template-columns: repeat(2, 1fr);
         }
     }
-    
     @media screen and (max-width: 750px){
         .localNavPoints{
             display: flex;
             overflow-x: scroll;
             scroll-snap-type: x mandatory;
+            background-color: var(--headerIconColor);
+            padding: 5px;
+            display: flex;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            width: 100%;
+        }
+        .localNavPoints a:first-child{
+            padding-left: 10px;
+        }
+        .localNavPoints a:last-child{
+            padding-right: 10px;
         }
         .localNavPoints::-webkit-scrollbar{
             height: 12px;
             margin-top: 12px;
-        }
-        .localNavPoints::-webkit-scrollbar-thumb,
-        .localNavPoints::-webkit-scrollbar-track{
-            /* border-radius: 92px; */
         }
         .localNavPoints::-webkit-scrollbar-thumb{
             background: var(--specialCaseColor);
         }
         .localNavPoints::-webkit-scrollbar-track{
             background: var(--headerColor);
-            /* margin: 0 5px; */
         }
         .localNavPoints a{
             flex-shrink: 0;
@@ -266,13 +277,26 @@
             grid-template-columns: repeat(1, 1fr);
         }
         .localNavPointsMobile{
+            position: relative;
             display: flex;
             align-items: center;
-            /* gap: 2vw; */
+            overflow: hidden;
         }
-        i{
-            display: block;
-            padding: 25px px;
+        .localNavGradientStart, .localNavGradientEnd{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 50px;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .localNavGradientStart{
+            left: 0;
+            background: linear-gradient(to right, var(--headerIconColor), rgba(255, 255, 255, 0));
+        }
+        .localNavGradientEnd{
+            right: 0;
+            background: linear-gradient(to left, var(--headerIconColor), rgba(255, 255, 255, 0));
         }
     }
 </style>

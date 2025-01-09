@@ -4,8 +4,18 @@
     import TheFooter from '@/components/TheFooter.vue';
     import ImgWText from '@/components/ImgWText.vue';
     import ImgWTextAlt from '@/components/ImgWTextAlt.vue';
+    import ExhibitCard from '@/components/ExhibitCard.vue'
+
+    import flyIFormation from '@/assets/img/exhibitIndividual/flyIFormation.jpg';
+    import bristolBlenheim from '@/assets/img/exhibitIndividual/-bristolBlenheim-.png';
+    import gravstedet from '@/assets/img/exhibitIndividual/gravstedet.png';
 
     import denDomteEksadrille from '@/assets/img/landingPage/ExhibitImg/den_domte_eksadrille.jpg';
+    import hangaren from '@/assets/img/landingPage/ExhibitImg/hangaren.jpg';
+    import jagerKorpset from '@/assets/img/landingPage/ExhibitImg/jagerKorpset.jpg';
+    import besaettelsestiden from '@/assets/img/landingPage/ExhibitImg/besaettelsestiden.jpeg';
+    import handvaben from '@/assets/img/landingPage/ExhibitImg/handvaben.jpg';
+    import flyvevabnet from '@/assets/img/landingPage/ExhibitImg/flyvevabnet.jpg';
 </script>
 <template>
     <HeroImgSub
@@ -16,7 +26,7 @@
     </HeroImgSub>
     <section>
         <ImgWTextAlt
-            :imageSrc="denDomteEksadrille"
+            :imageSrc="flyIFormation"
             imageAlt=""
         >
             <template #introHeadingAlt>
@@ -33,7 +43,7 @@
     </section>
     <section>
         <ImgWText 
-            :imageSrc="denDomteEksadrille"
+            :imageSrc="bristolBlenheim"
             imageAlt=""
         >
             <template #introHeading>
@@ -49,7 +59,7 @@
     </section>
     <section>
         <ImgWTextAlt
-            :imageSrc="denDomteEksadrille"
+            :imageSrc="gravstedet"
             imageAlt=""
         >
             <template #introHeadingAlt>
@@ -63,6 +73,59 @@
         <h3>Den Dømte Eskadrille: <br> En Udstilling om Mod og Ofre</h3>
         <p>Udstillingen "Den Dømte Eskadrille" på Aalborg Forsvars- og Garnisonsmuseum viser vragrester fra et Bristol Blenheim bombefly og fortæller historien om missionen den 13. august 1940.</p>
     </section>
+
+    <section id="scrollToPoint">
+            <div class="sideScrollHeader">
+                <h2>VORES UDSTILLINGER</h2>
+                <CTABtn id="CTABorder">
+                    <template #CTAText>SE ALLE UDSTILLINGER</template>
+                </CTABtn>
+            </div>
+            <div class="sideScrollContainer">
+                <ExhibitCard
+                    class="sideScrollCard"
+                    :imageSrc="denDomteEksadrille"
+                >
+                    <template #exhibitName>DEN DØMTE ESKADRILLE</template>
+                    <template #exhibitCatagory>Anden verdenskrig</template>
+                </ExhibitCard>
+                <ExhibitCard
+                    class="sideScrollCard"
+                    :imageSrc="hangaren"
+                >
+                    <template #exhibitName>HANGAREN</template>
+                    <template #exhibitCatagory>Den kolde krig</template>
+                </ExhibitCard>
+                <ExhibitCard
+                    class="sideScrollCard"
+                    :imageSrc="jagerKorpset"
+                >
+                    <template #exhibitName>JÆGERKORPSET</template>
+                    <template #exhibitCatagory>Totalforsvaret</template>
+                </ExhibitCard>
+                <ExhibitCard
+                    class="sideScrollCard"
+                    :imageSrc="besaettelsestiden"
+                >
+                    <template #exhibitName>BESÆTTELSESTIDEN</template>
+                    <template #exhibitCatagory>Anden verdenskrig</template>
+                </ExhibitCard>
+                <ExhibitCard
+                    class="sideScrollCard"
+                    :imageSrc="handvaben"
+                >
+                    <template #exhibitName>HÅNDVÅBEN</template>
+                    <template #exhibitCatagory>Våbenkollektionen</template>
+                </ExhibitCard>
+                <ExhibitCard
+                    class="sideScrollCard"
+                    :imageSrc="flyvevabnet"
+                >
+                    <template #exhibitName>FLYVÅBNET</template>
+                    <template #exhibitCatagory>Totalforsvaret</template>
+                </ExhibitCard>
+            </div>
+        </section>
     <TheFooter />
     <StickyBottomMenu />
 </template>
@@ -79,6 +142,44 @@
         display: none;
     }
     section{
-        margin: 50px 5vw;
+        margin-top: 50px;
+        margin-bottom: 50px;
     }
+
+    .sideScrollHeader{
+        display: flex;
+        justify-content: space-between;
+        margin: 50px 5vw 25px 5vw;
+    }
+    .sideScrollContainer{
+        display: flex;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        align-items: flex-start;
+    }
+    .sideScrollContainer::-webkit-scrollbar{
+        height: 12px;
+    }
+    .sideScrollContainer::-webkit-scrollbar-thumb,
+    .sideScrollContainer::-webkit-scrollbar-track{
+        border-radius: 92px;
+    }
+    .sideScrollContainer::-webkit-scrollbar-thumb{
+        background: var(--specialCaseColor);
+    }
+    .sideScrollContainer::-webkit-scrollbar-track{
+        background: var(--headerColor);
+        margin: 0 5vw;
+    }
+    .sideScrollCard{
+        scroll-snap-align: center;
+        margin: 0 25px 25px 25px;
+    }
+    .sideScrollCard:first-child{
+        margin-left: 5vw;
+    }
+    .sideScrollCard:last-child{
+        margin-right: 5vw;
+    }
+
 </style>
