@@ -1,7 +1,6 @@
 <script setup>
     import HeroImgSub from '@/components/HeroImgSub.vue'; 
     import StickyBottomMenu from '@/components/StickyBottomMenu.vue';
-    import TheFooter from '@/components/TheFooter.vue';
     import ExhibitCard from '@/components/ExhibitCard.vue';
 
     import udstillingerForsidebillede from '@/assets/img/exhibitOverview/udstillinger_forsidebillede.jpg';
@@ -30,7 +29,17 @@
 
     import attenfiretreds from '@/assets/img/exhibitOverview/1864/1864.jpg';
 
-    
+    import { ref } from 'vue';
+
+    const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+        section.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+    });
+  }
+};
 </script>
 
 <template>
@@ -40,20 +49,19 @@
         <template #subPageHeading>VORES UDSTILLINGER</template>
         <template #subPageIntro>Her kan du se alle vores udstillinger</template>
     </HeroImgSub>
+    <div id="main">
     <section class="localnav">
     <p>SKIP TIL</p>
     <div class="localNavPointsMobile">
-        <i class="fa-solid fa-chevron-left scroll"></i>
         <div class="localNavGradientStart"></div>
         <div class="localNavPoints">
-            <a href="#exhibitCategory1">2. VERDENSKRIG</a>
-            <a href="#exhibitCategory2">KOLDE KRIG</a>
-            <a href="#exhibitCategory3">TOTALFORSVARET</a>
-            <a href="#exhibitCategory4">AALBORG GARNISON</a>
-            <a href="#exhibitCategory5">1864</a>
+            <a href="#exhibitCategory1" @click.prevent="scrollToSection('exhibitCategory1')">2. VERDENSKRIG</a>
+            <a href="#exhibitCategory2" @click.prevent="scrollToSection('exhibitCategory2')">KOLDE KRIG</a>
+            <a href="#exhibitCategory3" @click.prevent="scrollToSection('exhibitCategory3')">TOTALFORSVARET</a>
+            <a href="#exhibitCategory4" @click.prevent="scrollToSection('exhibitCategory4')">AALBORG GARNISON</a>
+            <a href="#exhibitCategory5" @click.prevent="scrollToSection('exhibitCategory5')">1864</a>
         </div>
         <div class="localNavGradientEnd"></div>
-        <i class="fa-solid fa-chevron-right"></i>
     </div>
 </section>
     <section class="categorySingle" id="exhibitCategory1">
@@ -195,108 +203,92 @@
             </ExhibitCard>
         </div>
     </section>
-    <TheFooter />
+</div>
     <StickyBottomMenu />
+
 </template>
 
 <style scoped>
+.localNavPoints{
+    position: relative;
+    background-color: var(--headerIconColor);
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+}
+.localNavPoints a{
+    color: var(--headerColor);
+    text-decoration: none;
+    padding: 15px 0;
+    font-family: Roboto;
+    font-weight: var(--boldWeight);
+}
+.localNavPoints a:hover{
+    text-decoration: underline;
+}
+.exhibitContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px 20px;
+}
+#main{
+    margin: 0 5vw;
+}
+
+@media screen and (max-width: 1400px){
+    .exhibitContainer{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 750px){
+    /* Mobile-specific styles */
     .localNavPoints{
-        position: relative;
-        background-color: var(--headerIconColor);
-        padding: 5px;
         display: flex;
-        justify-content: space-around;
-        align-items: center;
-        overflow: hidden;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        width: 100%;
+        padding: 0 10px;
     }
     .localNavPoints a{
-        color: var(--headerColor);
-        text-decoration: none;
-        padding: 15px 0px;
-        font-family: Roboto;
-        font-weight: var(--boldWeight);
+        flex-shrink: 0;
+        margin: 0 10px;
+        scroll-snap-align: center;
     }
-    .localNavPoints a:hover{
-        text-decoration: underline;
+    .localNavPoints::-webkit-scrollbar{
+        height: 12px;
     }
-    section{
-        margin: 50px 5vw;
+    .localNavPoints::-webkit-scrollbar-thumb{
+        background: var(--specialCaseColor);
     }
-    i{
-        color: var(--headerColor);
-        font-size: 2rem;
-        display: none;
-        background-color: var(--headerIconColor);
+    .localNavPoints::-webkit-scrollbar-track{
+        background: var(--headerColor);
     }
     .exhibitContainer{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 50px 20px;
+        grid-template-columns: 1fr;
     }
-
-    @media screen and (max-width: 1400px){
-        .exhibitContainer{
-            grid-template-columns: repeat(2, 1fr);
-        }
+    .localNavPointsMobile{
+        position: relative;
+        display: flex;
+        align-items: center;
     }
-    @media screen and (max-width: 750px){
-        .localNavPoints{
-            display: flex;
-            overflow-x: scroll;
-            scroll-snap-type: x mandatory;
-            background-color: var(--headerIconColor);
-            padding: 5px;
-            display: flex;
-            overflow-x: scroll;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            width: 100%;
-        }
-        .localNavPoints a:first-child{
-            padding-left: 10px;
-        }
-        .localNavPoints a:last-child{
-            padding-right: 10px;
-        }
-        .localNavPoints::-webkit-scrollbar{
-            height: 12px;
-            margin-top: 12px;
-        }
-        .localNavPoints::-webkit-scrollbar-thumb{
-            background: var(--specialCaseColor);
-        }
-        .localNavPoints::-webkit-scrollbar-track{
-            background: var(--headerColor);
-        }
-        .localNavPoints a{
-            flex-shrink: 0;
-            margin: 0 10px;
-            scroll-snap-align: center;
-        }
-        .exhibitContainer{
-            grid-template-columns: repeat(1, 1fr);
-        }
-        .localNavPointsMobile{
-            position: relative;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-        }
-        .localNavGradientStart, .localNavGradientEnd{
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 50px;
-            pointer-events: none;
-            z-index: 1;
-        }
-        .localNavGradientStart{
-            left: 0;
-            background: linear-gradient(to right, var(--headerIconColor), rgba(255, 255, 255, 0));
-        }
-        .localNavGradientEnd{
-            right: 0;
-            background: linear-gradient(to left, var(--headerIconColor), rgba(255, 255, 255, 0));
-        }
+    .localNavGradientStart, .localNavGradientEnd{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50px;
+        pointer-events: none;
+        z-index: 1;
     }
+    .localNavGradientStart{
+        left: 0;
+        background: linear-gradient(to right, var(--headerIconColor), rgba(255, 255, 255, 0));
+    }
+    .localNavGradientEnd{
+        right: 0;
+        background: linear-gradient(to left, var(--headerIconColor), rgba(255, 255, 255, 0));
+    }
+}
 </style>

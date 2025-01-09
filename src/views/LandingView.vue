@@ -8,7 +8,6 @@
     import ImgWText from '@/components/ImgWText.vue';
     import ImgWTextAlt from '@/components/ImgWTextAlt.vue';
     import CTABtn from '@/components/CTABtn.vue';
-    import TheFooter from '@/components/TheFooter.vue';
     
     import velkommenTilMuseetImg from '@/assets/img/landingPage/velkommen_til_museet.jpg';
     import komPoBesog from '@/assets/img/landingPage/kom_po_besog.jpg';
@@ -122,14 +121,17 @@
                     <template #activityName>2. VERDENSKRIG I BØRNEHØJDE</template>
                     <template #activityAvailability>Altid tilgængelig</template>
                 </ActivityCard>
+                <RouterLink to="/childrensBirthdayView">
                 <ActivityCard
                     class="sideScrollCard"
                     :imageSrc="aktivitetpilot"
+                    id="aFix"
                 >
                     <template #activityCatagory>Familieaktivitet</template>
                     <template #activityName>BØRNEFØDSELSDAG</template>
                     <template #activityAvailability>Efter bestilling</template>
                 </ActivityCard>
+                </RouterLink>
                 <ActivityCard
                     class="sideScrollCard"
                     :imageSrc="lydguidedTour"
@@ -234,7 +236,6 @@
                 <template #CTAFEPText>BESTIL BILLETTER</template>
             </FEPCard>
         </section>
-        <TheFooter />
         <StickyBottomMenu />
     </main>
 </template>

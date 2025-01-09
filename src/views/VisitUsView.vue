@@ -4,10 +4,12 @@ import FEPCard from "@/components/FEPCard.vue";
 import HeroImgSub from '@/components/HeroImgSub.vue';
 
 import fly from "@/assets/img/VisitUsPage/fly.png";
+import besoegOs from "@/assets/img/VisitUsPage/besoegOs.jpg";
 
 export default {
   components: {
     FEPCard,
+    HeroImgSub,
   },
 
   setup() {
@@ -57,18 +59,19 @@ export default {
       item.isOpen = !item.isOpen;
     };
 
-    return { accordionItems, toggleAccordion, fly };
+    return { accordionItems, toggleAccordion, fly,  besoegOs};
   },
 };
 </script>
 <template>
   <HeroImgSub
-    :imageSrc="FamilyNKids"
+    :imageSrc="besoegOs"
   >
-    <template #subPageHeading>BØRN OG FAMILIER</template>
-    <template #subPageIntro>Find alt du behøver vide inde begøs hos os</template>
+    <template #subPageHeading>BESØG OS</template>
+    <template #subPageIntro>Find alt du behøver inde besøg hos os</template>
   </HeroImgSub>
-  <div class="accordion-grid">
+  <section>
+    <div class="accordion-grid">
     <div class="accordion" v-for="item in accordionItems" :key="item.title">
       <div class="accordion-header" @click="toggleAccordion(item)">
         <i :class="item.icon" class="accordion-icon"></i>
@@ -83,6 +86,8 @@ export default {
       </div>
     </div>
   </div>
+  </section>
+  
   <FEPCard :imageSrc="fly">
     <template #FEPHeading>UDSTILLINGER PÅ MUSEUMET</template>
     <template #CTAFEPText>SE UDSTILLINGER</template>

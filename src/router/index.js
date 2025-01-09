@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import LandingView from '@/views/LandingView.vue'
 import ChildrensBirthdayView from '@/views/ChildrensBirthdayView.vue'
 import ExhibitIndividualView from '@/views/ExhibitIndividualView.vue'
@@ -7,10 +7,10 @@ import FamilyNKidsView from '@/views/FamilyNKidsView.vue'
 import VisitUsView from '@/views/VisitUsView.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/landing',
+      path: '/',
       name: 'landing',
       component: LandingView,
     },

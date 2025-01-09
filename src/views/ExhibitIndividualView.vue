@@ -1,7 +1,6 @@
 <script setup>
     import HeroImgSub from '@/components/HeroImgSub.vue'; 
     import StickyBottomMenu from '@/components/StickyBottomMenu.vue';
-    import TheFooter from '@/components/TheFooter.vue';
     import ImgWText from '@/components/ImgWText.vue';
     import ImgWTextAlt from '@/components/ImgWTextAlt.vue';
     import ExhibitCard from '@/components/ExhibitCard.vue'
@@ -126,7 +125,6 @@
                 </ExhibitCard>
             </div>
         </section>
-    <TheFooter />
     <StickyBottomMenu />
 </template>
 

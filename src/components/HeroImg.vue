@@ -1,19 +1,47 @@
+<script>
+export default {
+    data() {
+        return {
+            isPlaying: true,
+        };
+    },
+    methods: {
+        toggleVideo() {
+            const video = this.$refs.heroVideo;
+            if (video.paused) {
+                video.play();
+                this.isPlaying = true;
+            } else {
+                video.pause();
+                this.isPlaying = false;
+            }
+        },
+        scrollToSection() {
+            const target = document.querySelector("#scrollToPoint");
+            if (target) {
+                target.scrollIntoView({ behavior: "smooth" });
+            }
+        },
+    },
+};
+</script>
+
 <template>
   <div class="heroContainer">
-    <video ref="heroVideo" autoplay loop muted playsinline>
-      <source src="@/assets/img/herovideo_desktop.mp4" type="video/mp4" />
-    </video>
-    <h1>OPLEV DANMARKS <br> MILITÆRE HISTORIE</h1>
-    <div class="scrollIndicator">
-      <a href="#scrollToPoint">
-        <i class="fa-solid fa-arrow-down-long" id="scrollIndicatorIcon"></i>
-      </a>
-      <p>Udforsk vores udstillinger</p>
+        <video ref="heroVideo" autoplay loop muted playsinline>
+            <source src="@/assets/img/herovideo_desktop.mp4" type="video/mp4" />
+        </video>
+        <h1>OPLEV DANMARKS <br> MILITÆRE HISTORIE</h1>
+        <div class="scrollIndicator">
+        <a @click.prevent="scrollToSection">
+            <i class="fa-solid fa-arrow-down-long" id="scrollIndicatorIcon"></i>
+        </a>
+            <p>Udforsk vores udstillinger</p>
+        </div>
+        <button @click="toggleVideo" class="pause-play-btn">
+            <i :class="isPlaying ? 'fa-solid fa-circle-pause' : 'fa-solid fa-circle-play'"></i>
+        </button>
     </div>
-    <button @click="toggleVideo" class="pause-play-btn">
-      <i :class="isPlaying ? 'fa-solid fa-circle-pause' : 'fa-solid fa-circle-play'"></i>
-    </button>
-  </div>
 </template>
 
 <style scoped>
@@ -121,25 +149,3 @@
         }
     }
 </style>
-
-<script>
-    export default {
-        data() {
-            return {
-                isPlaying: true
-            };
-        },
-        methods: {
-            toggleVideo() {
-                const video = this.$refs.heroVideo;
-                if (video.paused) {
-                    video.play();
-                    this.isPlaying = true;
-                } else {
-                    video.pause();
-                    this.isPlaying = false;
-                }
-            },
-        },
-    };
-</script>

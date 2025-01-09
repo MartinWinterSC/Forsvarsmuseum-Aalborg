@@ -17,10 +17,10 @@ export default{
     <nav :class="{ 'overlay-active': isMenuVisible }">
         <div class="topnav">
             <div class="navPointsPrimary">
-                <RouterLink to=""><img src="@/assets/img/FGMALogo.png" alt="FGMA"></RouterLink>
+                <RouterLink to="/"><img src="@/assets/img/FGMALogo.png" alt="FGMA"></RouterLink>
                 <div class="desktopNavPoints">
-                    <RouterLink to="/">BESØG</RouterLink>
-                    <RouterLink to="/">UDSTILLINGER</RouterLink>
+                    <RouterLink to="/visitUsView">BESØG</RouterLink>
+                    <RouterLink to="/exhibitOverView">UDSTILLINGER</RouterLink>
                     <RouterLink to="/">OM MUSEET</RouterLink>
                 </div>
             </div>
@@ -36,15 +36,16 @@ export default{
         </div>
         <div class="overlayMenuContainer" :class="{ active: isMenuVisible }">
             <div class="navPointsMenu" id="navPointsMenu">
-                <RouterLink to="/">BESØG</RouterLink>
-                <RouterLink to="/">UDSTILLINGER</RouterLink>
+                <RouterLink to="/visitUsView">BESØG</RouterLink>
+                <RouterLink to="/exhibitOverView">UDSTILLINGER</RouterLink>
                 <RouterLink to="/">OM MUSEET</RouterLink>
             </div>
             <div class="miscMenu">
                 <p class="bold">GÅ DIREKTE TIL:</p>
-                <RouterLink to="/">Familier og børn</RouterLink>
+                <RouterLink to="/familyNKidsView">Familier og børn</RouterLink>
                 <RouterLink to="/">Skoler</RouterLink>
                 <RouterLink to="/">Grupper</RouterLink>
+                <RouterLink to="/">Arkiv</RouterLink>
                 <RouterLink to="/">Støt os</RouterLink>
             </div>
             <button class="ticketSale">BESTIL BILLETTER</button>
@@ -358,6 +359,9 @@ export default{
     }
     .overlay-active .fa-xmark{
         display: block;
+    }
+    #navPointsMenu{
+        font-weight: var(--boldWeight);
     }
     @media screen and (min-width: 950px){
         .overlayMenuContainer{

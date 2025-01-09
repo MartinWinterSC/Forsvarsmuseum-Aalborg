@@ -57,11 +57,13 @@ import FamilyNKids from "@/assets/img/FamilyNKids/FamilyNKids.jpg";
         <template #activityName>2. VERDENSKRIG I BØRNEHØJDE</template>
         <template #activityAvailability>Altid tilgængelig</template>
       </ActivityCard>
-      <ActivityCard class="sideScrollCard" :imageSrc="aktivitetpilot">
+      <RouterLink to="/childrensBirthdayView">
+      <ActivityCard class="sideScrollCard" :imageSrc="aktivitetpilot" id="aFix">
         <template #activityCatagory>Familieaktivitet</template>
         <template #activityName>BØRNEFØDSELSDAG</template>
         <template #activityAvailability>Efter bestilling</template>
       </ActivityCard>
+      </RouterLink>
       <ActivityCard class="sideScrollCard" :imageSrc="aktivitetSeCockpittet">
         <template #activityCatagory>Familieaktivitet</template>
         <template #activityName>UDFORSK COCKPITTET</template>
@@ -81,6 +83,7 @@ import FamilyNKids from "@/assets/img/FamilyNKids/FamilyNKids.jpg";
   justify-content: space-between;
   margin: 50px 5vw 25px 5vw;
 }
+
 p{
   color: var(--headerColor);
 }
