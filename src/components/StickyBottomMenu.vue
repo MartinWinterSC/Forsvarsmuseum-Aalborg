@@ -1,7 +1,9 @@
 <template>
     <section id="bottomSticky">
         <div>
-            <p class="bold">FORBERED DIT BESØG</p>
+            <RouterLink to="/visitUsView">
+                <p class="bold">FORBERED DIT BESØG</p>
+            </RouterLink>
         </div>
         <div class="openingHours">
             <p>Museet er åbent idag</p>

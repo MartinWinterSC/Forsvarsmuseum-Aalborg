@@ -9,6 +9,9 @@ export default{
         toggleMenu(){
             this.isMenuVisible = !this.isMenuVisible;
         },
+        closeMenu() {
+            this.isMenuVisible = false;
+        },
     },
 };
 </script>
@@ -19,9 +22,9 @@ export default{
             <div class="navPointsPrimary">
                 <RouterLink to="/"><img src="@/assets/img/FGMALogo.png" alt="FGMA"></RouterLink>
                 <div class="desktopNavPoints">
-                    <RouterLink to="/visitUsView">BESØG</RouterLink>
-                    <RouterLink to="/exhibitOverView">UDSTILLINGER</RouterLink>
-                    <RouterLink to="/">OM MUSEET</RouterLink>
+                    <RouterLink to="/visitUsView" @click="closeMenu">BESØG</RouterLink>
+                    <RouterLink to="/exhibitOverView" @click="closeMenu">UDSTILLINGER</RouterLink>
+                    <RouterLink to="/" @click="closeMenu">OM MUSEET</RouterLink>
                 </div>
             </div>
             <div class="navPointsSecondary">
@@ -36,17 +39,17 @@ export default{
         </div>
         <div class="overlayMenuContainer" :class="{ active: isMenuVisible }">
             <div class="navPointsMenu" id="navPointsMenu">
-                <RouterLink to="/visitUsView">BESØG</RouterLink>
-                <RouterLink to="/exhibitOverView">UDSTILLINGER</RouterLink>
-                <RouterLink to="/">OM MUSEET</RouterLink>
+                <RouterLink to="/visitUsView" @click="closeMenu">BESØG</RouterLink>
+                <RouterLink to="/exhibitOverView" @click="closeMenu">UDSTILLINGER</RouterLink>
+                <RouterLink to="/" @click="closeMenu">OM MUSEET</RouterLink>
             </div>
             <div class="miscMenu">
                 <p class="bold">GÅ DIREKTE TIL:</p>
-                <RouterLink to="/familyNKidsView">Familier og børn</RouterLink>
-                <RouterLink to="/">Skoler</RouterLink>
-                <RouterLink to="/">Grupper</RouterLink>
-                <RouterLink to="/">Arkiv</RouterLink>
-                <RouterLink to="/">Støt os</RouterLink>
+                <RouterLink to="/familyNKidsView" @click="closeMenu">Familier og børn</RouterLink>
+                <RouterLink to="/" @click="closeMenu">Skoler</RouterLink>
+                <RouterLink to="/" @click="closeMenu">Grupper</RouterLink>
+                <RouterLink to="/" @click="closeMenu">Arkiv</RouterLink>
+                <RouterLink to="/" @click="closeMenu">Støt os</RouterLink>
             </div>
             <button class="ticketSale">BESTIL BILLETTER</button>
             <div class="contactInfo">
@@ -192,18 +195,17 @@ export default{
             flex-direction: column;
             position: absolute;
             top: 40%;
-            right: 50%;
+            right: 45%;
             transform: translate(120%);
         }
         .navPointsMenu{
             position: absolute;
             top: 40%;
-            left: 50%;
+            left: 45%;
             transform: translate(-120%);
             display: flex;
             flex-direction: column;
         }
-        
         .contactInfo{
             position: absolute;
             bottom: 5%;
@@ -282,6 +284,12 @@ export default{
         }
         .navPointsSecondary i{
             margin-left: 15px;
+        }
+        .miscMenu{
+            right: 50%;
+        }
+        .navPointsMenu{
+            left: 50%;
         }
     }
     @media screen and (max-width: 1050px){

@@ -87,32 +87,32 @@ export default {
     </div>
   </div>
   </section>
-  
-  <FEPCard :imageSrc="fly">
-    <template #FEPHeading>UDSTILLINGER PÅ MUSEUMET</template>
-    <template #CTAFEPText>SE UDSTILLINGER</template>
-  </FEPCard>
+  <RouterLink to="/exhibitOverView">
+    <FEPCard :imageSrc="fly">
+      <template #FEPHeading>UDSTILLINGER PÅ MUSEUMET</template>
+      <template #CTAFEPText>SE UDSTILLINGER</template>
+    </FEPCard>
+  </RouterLink>
 </template>
 
 <style scoped>
-.accordion-grid {
+.accordion-grid{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 25px;
   margin-left: 5vw;
   margin-right: 5vw;
-  margin-bottom: 5rem;
 }
 
-.accordion {
-  border: 3px solid #000;
+.accordion{
+  border: 3px solid var(--headerIconColor);
   padding: 10px;
   border-radius: 12px;
   cursor: pointer;
   align-self: start;
 }
 
-.accordion-header {
+.accordion-header{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -121,32 +121,37 @@ export default {
   font-family: Chivo Mono;
   margin-top: 10px;
   margin-bottom: 10px;
+  color: var(--headerIconColor);
 }
 
-.accordion-content {
+.accordion-content{
   margin-top: 30px;
   padding: 10px;
 }
-.accordion-icon {
-  font-size: 40px;
+.accordion-content p{
+  color: var(--headerIconColor);
 }
-.arrow {
+.accordion-icon{
+  font-size: 40px;
+  color: var(--headerIconColor);
+}
+.arrow{
   font-size: 30px;
   transition: transform 0.5s ease;
 }
-
-.arrow.rotate {
+.arrow.rotate{
   transform: rotate(180deg);
 }
 section{
-  margin-bottom: 5rem;
+  margin-bottom: 50px;
 }
-@media screen and (max-width: 950px) {
-  .accordion-grid {
+
+@media screen and (max-width: 950px){
+  .accordion-grid{
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
   }
-  .accordion-content {
+  .accordion-content{
     text-align: center;
   }
 }

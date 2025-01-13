@@ -58,16 +58,16 @@ p, li{
     --boldWeight: 700;
 }
 section{
-    margin: 25px 0;
+    margin: 50px 0;
 }
 body{
     background-color: var(--backgroundPrimaryColor);
 }
+a{
+    text-decoration: none;
+}
 @media screen and (max-width: 950px){
     section{
-        margin: 15px 0;
+        margin: 25px 0;
     }
 }
-#aFix{
-    margin: 0 25px 25px 25px;
-  }

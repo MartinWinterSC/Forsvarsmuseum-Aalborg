@@ -42,18 +42,13 @@
         <section id="scrollToPoint">
             <div class="sideScrollHeader">
                 <h2>VORES UDSTILLINGER</h2>
-                <CTABtn id="CTABorder">
-                    <template #CTAText>SE ALLE UDSTILLINGER</template>
-                </CTABtn>
+                <RouterLink to="/exhibitOverView">
+                    <CTABtn id="CTABorder">
+                        <template #CTAText>SE ALLE UDSTILLINGER</template>
+                    </CTABtn>
+                </RouterLink>
             </div>
             <div class="sideScrollContainer">
-                <ExhibitCard
-                    class="sideScrollCard"
-                    :imageSrc="denDomteEksadrille"
-                >
-                    <template #exhibitName>DEN DØMTE ESKADRILLE</template>
-                    <template #exhibitCatagory>Anden verdenskrig</template>
-                </ExhibitCard>
                 <ExhibitCard
                     class="sideScrollCard"
                     :imageSrc="hangaren"
@@ -61,6 +56,15 @@
                     <template #exhibitName>HANGAREN</template>
                     <template #exhibitCatagory>Den kolde krig</template>
                 </ExhibitCard>
+                <RouterLink to="/exhibitIndividualView">
+                    <ExhibitCard
+                        class="sideScrollCard"
+                        :imageSrc="denDomteEksadrille"
+                    >
+                        <template #exhibitName>DEN DØMTE ESKADRILLE</template>
+                        <template #exhibitCatagory>Anden verdenskrig</template>
+                    </ExhibitCard>
+                </RouterLink>
                 <ExhibitCard
                     class="sideScrollCard"
                     :imageSrc="jagerKorpset"
@@ -105,7 +109,10 @@
                     <p>Vi tilbyder en unik mulighed for komme tæt på historien gennem spændende fortællinger og sjældne genstande.</p>
                     <p>Tag familien, vennerne eller kollegerne med og få en oplevelse sammen. Vi glæder os til at byde dig velkommen og dele historien med dig!</p>                    
                 </template>
-                <template #CTAImgText>PLANLÆG DIT BESØG</template>
+                
+                <template #CTAImgText>
+                    <RouterLink to="/visitUsView">PLANLÆG DIT BESØG</RouterLink>
+                </template>
             </ImgWText>
         </section>
         <section>
@@ -161,7 +168,7 @@
                     :imageSrc="aktivitetChurchilllobet"
                 >
                     <template #activityCatagory>Familieaktivitet</template>
-                    <template #activityName>CHURCILL-LØBET</template>
+                    <template #activityName>CHURCHILL-LØBET</template>
                     <template #activityAvailability>5. maj 2025</template>
                 </ActivityCard>
                 
@@ -254,6 +261,7 @@
         overflow-x: scroll;
         scroll-snap-type: x mandatory;
         align-items: flex-start;
+        gap: 50px;
     }
     .sideScrollContainer::-webkit-scrollbar{
         height: 12px;
@@ -271,12 +279,13 @@
     }
     .sideScrollCard{
         scroll-snap-align: center;
-        margin: 0 25px 25px 25px;
+        margin: 0;
+        margin-bottom: 25px;
     }
-    .sideScrollCard:first-child{
+    .sideScrollCard:first-child:not(.sideScrollContainer > a > .sideScrollCard){
         margin-left: 5vw;
     }
-    .sideScrollCard:last-child{
+    .sideScrollCard:last-child:not(.sideScrollContainer > a > .sideScrollCard){
         margin-right: 5vw;
     }
     #insta{
@@ -285,13 +294,10 @@
     #insta p{
         color: var(--headerIconColor);
     }
-    p, li{
+    p{
         color: var(--headerColor);
     }
-    li{
-        font-size: 1rem;
-    }
-    ul{
-        margin: 25px;
+    a{
+        color: var(--specialCaseColor);
     }
 </style>
