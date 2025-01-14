@@ -26,7 +26,7 @@
     <section>
         <ImgWTextAlt
             :imageSrc="flyIFormation"
-            imageAlt="Brittiske fly I formation"
+            imageAlt=""
         >
             <template #introHeadingAlt>
                 Operationen mod Aalborg: Et Skæbnesvangert Angreb
@@ -43,7 +43,7 @@
     <section>
         <ImgWText 
             :imageSrc="bristolBlenheim"
-            imageAlt="Bristol Blenheim bomberfly"
+            imageAlt=""
         >
             <template #introHeading>
                 Squadron: Modige Missioner i Mørke Tider
@@ -59,7 +59,7 @@
     <section>
         <ImgWTextAlt
             :imageSrc="gravstedet"
-            imageAlt="Kirkegaard for "
+            imageAlt=""
         >
             <template #introHeadingAlt>
                 Vadum Kirkegård: En Stille Hyldest til Faldene
@@ -81,6 +81,13 @@
                 </CTABtn>
             </div>
             <div class="sideScrollContainer">
+                <ExhibitCard
+                    class="sideScrollCard"
+                    :imageSrc="denDomteEksadrille"
+                >
+                    <template #exhibitName>DEN DØMTE ESKADRILLE</template>
+                    <template #exhibitCatagory>Anden verdenskrig</template>
+                </ExhibitCard>
                 <ExhibitCard
                     class="sideScrollCard"
                     :imageSrc="hangaren"

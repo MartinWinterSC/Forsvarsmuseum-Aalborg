@@ -17,9 +17,9 @@
         <div class="footerBottom">
             <img src="@/assets/img/FGMALogo.png" alt="">
             <div class="soMe">
-                <a href="https://www.facebook.com/Forsvarsmuseum/?locale=da_DK" target="_blank"><img src="./icons/facebook-f-brands-solid.svg" alt="Facebook Logo"></a>
-                <a href="https://www.instagram.com/aalborg_forsvarsmuseum/" target="_blank"><img src="./icons/instagram-brands-solid.svg" alt="YouTube Logo"></a>
-                <a href="https://www.youtube.com/channel/UCUF8owAiBnONe-nOA1u4rJQ" target="_blank"><img src="./icons/youtube-brands-solid.svg" alt="Instagram Logo"></a>
+                <a href="#" target="_blank"><img src="./icons/facebook-f-brands-solid.svg" alt="Facebook Logo"></a>
+                <a href="#" target="_blank"><img src="./icons/instagram-brands-solid.svg" alt="YouTube Logo"></a>
+                <a href="#" target="_blank"><img src="./icons/youtube-brands-solid.svg" alt="Instagram Logo"></a>
             </div>
         </div>
     </footer>

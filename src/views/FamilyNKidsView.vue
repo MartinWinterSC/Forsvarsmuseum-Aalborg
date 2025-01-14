@@ -27,14 +27,16 @@ import FamilyNKids from "@/assets/img/FamilyNKids/FamilyNKids.jpg";
         aktiviteter, som en spændende skattejagt, interaktive udstillinger og
         muligheden for at bygge deres egne mini-modeller af forsvarsudstyr.
       </p>
+     
       <p>
-        Og det bedste af det hele - børn under 18 år har gratis adgang til
+        Og det bedste af det hele – børn under 18 år har gratis adgang til
         Forsvarsmuseet!
       </p>
     </template>
     <template #CTATextAlt>BESTIL BILLETTER</template>
   </ImgWText>
   </section>
+  
   <div class="textContainerReview">
     <p id="citat">
       "Jeg havde en mega fed dag med masser af sjove opgaver og spændende
@@ -69,92 +71,67 @@ import FamilyNKids from "@/assets/img/FamilyNKids/FamilyNKids.jpg";
       </ActivityCard>
       <ActivityCard class="sideScrollCard" :imageSrc="aktivitetChurchilllobet">
         <template #activityCatagory>Familieaktivitet</template>
-        <template #activityName>CHURCHILL-LØBET</template>
+        <template #activityName>CHURCILL-LØBET</template>
         <template #activityAvailability>5. maj 2025</template>
       </ActivityCard>
     </div>
   </section>
 </template>
 <style scoped>
-p{
-  color: var(--headerColor);
-}
-.sideScrollHeader{
+.sideScrollHeader {
   display: flex;
   justify-content: space-between;
   margin: 50px 5vw 25px 5vw;
 }
-.sideScrollContainner{
+
+p{
+  color: var(--headerColor);
+}
+.sideScrollContainner {
   display: flex;
-  gap: 50px;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
 }
-.sideScrollCard{
+.sideScrollContainner::-webkit-scrollbar {
+  height: 12px;
+}
+.sideScrollContainner::-webkit-scrollbar-thumb,
+.sideScrollContainner::-webkit-scrollbar-track {
+  border-radius: 92px;
+}
+.sideScrollContainner::-webkit-scrollbar-thumb {
+  background: var(--specialCaseColor);
+}
+.sideScrollContainner::-webkit-scrollbar-track {
+  background: var(--headerColor);
+  margin: 0 5vw;
+}
+.sideScrollCard {
   scroll-snap-align: center;
-  margin: 0;
-  margin-bottom: 25px;
+  margin: 0 25px 25px 25px;
 }
-.sideScrollCard:first-child:not(.sideScrollContainer > a > .sideScrollCard){
+.sideScrollCard:first-child {
   margin-left: 5vw;
 }
-.sideScrollCard:last-child:not(.sideScrollContainer > a > .sideScrollCard){
+.sideScrollCard:last-child {
   margin-right: 5vw;
 }
-.textContainerReview{
+.textContainerReview {
+  margin-bottom: 5rem;
   background-color: var(--specialCaseColor);
   padding: 30px;
   max-width: 600px;
   border-radius: 30px;
+  margin-right: 5vw;
   margin-left: 20vw;
-  color: var(--headerColor);
+  color: white;
 }
-#navn{
-  margin-top: 25px;
+#navn {
+  margin-top: 2.5rem;
 }
-#citat{
-  font-size: 2rem;
+#citat {
+  font-size: 28px;
   font-weight: bold;
   line-height: 150%;
-}
-#aFix{
-  margin: 0;
-}
-@media screen and (max-width: 1500px){
-  .sideScrollContainner{
-  overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-  }
-  .sideScrollContainner::-webkit-scrollbar{
-    height: 12px;
-  }
-  .sideScrollContainner::-webkit-scrollbar-thumb,
-  .sideScrollContainner::-webkit-scrollbar-track{
-    border-radius: 92px;
-  }
-  .sideScrollContainner::-webkit-scrollbar-thumb{
-    background: var(--specialCaseColor);
-  }
-  .sideScrollContainner::-webkit-scrollbar-track{
-    background: var(--headerColor);
-    margin: 0 5vw;
-  }
-}
-@media screen and (max-width: 950px){
-  .sideScrollContainner{
-    gap: 25px;
-  }
-  #navn{
-    margin-top: 25px;
-  }
-  #citat{
-    font-size: 1.5rem;
-    font-weight: bold;
-    line-height: 150%;
-  }
-  .textContainerReview{
-    margin: 0 5vw;
-    max-width: unset;
-    border-radius: 30px;
-    margin-top: 50px;
-  }
 }
 </style>
